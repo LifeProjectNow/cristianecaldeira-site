@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preload" fetchpriority="high" as="image" href="https://i.ibb.co/fYpF3kHf/BLOCO-HEADLINE-1.png">
+    <link rel="preload" fetchpriority="high" as="image" href="https://i.ibb.co/rKmMvFmb/Capa-bloco-site-comprimido.webp">
 
     <title>Dra. Cristiane Caldeira | Estética de Alta Performance</title>
     <meta name="description" content="Descubra a Estética de Alta Performance. O método científico que reverte a flacidez e o 'rosto cansado', com resultados visíveis na primeira sessão — sem cirurgia.">
@@ -12,7 +12,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
     
     <meta property="og:title" content="Dra. Cristiane Caldeira | Estética de Alta Performance">
     <meta property="og:description" content="Você a partir de agora, na sua melhor versão!">
@@ -66,30 +66,33 @@
       fbq('init', '{PIXEL_ID}');
       fbq('track', 'PageView');
     </script>
+    
     <style>
-      /* * CSS EMBUTIDO DE ALTA PERFORMANCE (VERSÃO SOBERANA / PLAYFAIR)
+      /* * CSS EMBUTIDO (VERSÃO FINAL - JOGADA DE COR "CATÁLOGO CHARLOTTE")
        * Mobile-First, Vanilla CSS, Acessível (WCAG 2.1 AA)
        */
        
-      /* 1. Variáveis e Reset (Paleta Luxo) */
+      /* 1. Variáveis e Reset (NOVA JOGADA DE COR) */
       :root {
-        /* Paleta */
-        --c-primary: #755441; /* Marrom médio (foco, CTA) */
-        --c-primary-dark: #5a4132; /* Sombra/Hover do CTA */
-        --rgb-primary: 117, 84, 65; /* Para RGBA(glow) */
-        --c-support-1: #A7968B; /* Bege acinzentado */
-        --c-support-2: #CFBEA4; /* Dourado/Bege claro (Sotaque) */
-        --c-support-3: #A7958C; /* Cinza quente */
+        /* Paleta Ação (Marrom) */
+        --c-primary: #755441; 
+        --c-primary-dark: #5a4132; 
+        --rgb-primary: 117, 84, 65; 
+
+        /* Paleta Atmosfera (Baseada no Catálogo) */
+        --c-brand-rose-bg: #F5EAEB; /* Fundo Rosé Suave */
+        --c-brand-rose-dark: #EADEDB; /* Rosé mais escuro para Sticky Bar */
+        --c-gold: #CFBEA4; /* Dourado (Sotaque) */
         
-        /* Atmosfera */
-        --c-bg: #FDFBF8;         /* Branco "quente", off-white */
+        /* Paleta Base (Neutros) */
+        --c-bg: #FFFFFF;         /* Branco Puro (como na referência) */
         --c-bg-light: #F7F4F1;  /* Bege muito claro para seções */
-        --c-text: #332223;        /* Marrom muito escuro */
+        --c-text: #1C1C1C;        /* Preto Suave (Alto Contraste) */
         --c-text-body: #4A3F37;    /* Marrom médio para parágrafos */
-        --c-text-light: #FDFBF8;  /* Texto claro (para fundos escuros/hero) */
+        --c-text-light: #FFFFFF;  /* Texto claro (para fundos escuros) */
         --c-border: #E0DACE;      /* Borda suave, tom de bege */
         
-        /* Tipografia (Playfair Display + Montserrat) */
+        /* Tipografia (Montserrat + Playfair Display) */
         --font-heading: 'Playfair Display', serif;
         --font-main: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         
@@ -120,7 +123,7 @@
       
       body {
         font-family: var(--font-main);
-        font-size: 16px;
+        font-size: 17px; /* AUMENTADO: Fonte base maior */
         line-height: 1.7; 
         color: var(--c-text-body);
         background-color: var(--c-bg);
@@ -149,13 +152,18 @@
         background-color: var(--c-bg-light);
       }
       
+      /* NOVO: Bloco escuro para alternar */
       .section-bg-dark {
-        background-color: var(--c-primary);
+        background-color: var(--c-text); /* Fundo Preto Suave */
         color: var(--c-text-light);
       }
       .section-bg-dark h2,
-      .section-bg-dark p {
+      .section-bg-dark p,
+      .section-bg-dark h4 {
         color: var(--c-text-light);
+      }
+      .section-bg-dark .subheadline {
+        color: rgba(255,255,255,0.8);
       }
       
       .sr-only {
@@ -180,29 +188,38 @@
       .elegant-divider {
         border: 0;
         height: 1px;
-        background-color: var(--c-border);
+        background-color: var(--c-gold); /* MUDANÇA: Cor Dourada */
         max-width: 200px;
         margin: 0 auto;
       }
 
-      /* 3. Tipografia Premium (Com Playfair Display) */
+      /* 3. Tipografia Premium (Com Montserrat e Playfair) */
       h1, h2, h3 {
-        font-family: var(--font-heading);
+        font-family: var(--font-main); /* MUDANÇA: Padrão Montserrat */
         font-weight: 700;
         line-height: 1.2;
         margin-bottom: var(--spacing-lg);
         color: var(--c-text);
         letter-spacing: -0.01em;
+        text-transform: uppercase; /* Títulos em maiúsculo */
       }
       
       h1 {
-        font-size: clamp(2.8rem, 8vw, 4.2rem);
-        text-align: center;
-        font-weight: 800; /* Mais impacto */
+        font-size: clamp(2.8rem, 8vw, 4.5rem); /* AUMENTADO */
+        text-align: left;
+        font-weight: 700;
+      }
+      /* Efeito Duas Fontes no Hero */
+      h1 em {
+          font-family: var(--font-heading); /* Playfair Display */
+          font-style: italic;
+          font-weight: 700;
+          text-transform: none; /* Itálico em caixa normal */
+          display: block; /* Quebra a linha */
       }
       
       h2 {
-        font-size: clamp(2.1rem, 6vw, 3.2rem);
+        font-size: clamp(2.3rem, 6vw, 3.5rem); /* AUMENTADO */
         text-align: center;
         max-width: 800px;
         margin-left: auto;
@@ -210,7 +227,7 @@
       }
       
       h3 {
-        font-size: clamp(1.5rem, 5vw, 1.9rem);
+        font-size: clamp(1.8rem, 5vw, 2.2rem); /* AUMENTADO */
       }
       
       p {
@@ -219,7 +236,7 @@
       }
       
       p.subheadline {
-        font-size: clamp(1.1rem, 3vw, 1.2rem); 
+        font-size: clamp(1.1rem, 3vw, 1.3rem); /* AUMENTADO */
         text-align: center;
         max-width: 750px;
         margin-left: auto;
@@ -291,46 +308,35 @@
         background-color: var(--c-primary);
         color: var(--c-text-light);
       }
-      /* === INÍCIO - CÓDIGO DO BOTÃO INVERTIDO (CTA-FINAL) === */
       
-      /* Define a aparência base do botão invertido */
       .cta-inverted {
-        background-color: #FDFBF9; /* Sua cor de fundo exata */
-        color: #755441; /* Sua cor de texto exata */
-        border-color: #FDFBF9;
+        background-color: var(--c-bg); /* Fundo Branco */
+        color: var(--c-text); /* Texto Preto/Escuro */
+        border-color: var(--c-bg);
       }
-      
-      /* Define o :hover do botão invertido */
       .cta-inverted:hover, 
       .cta-inverted:focus-visible {
-        background-color: #f0ebe5; /* Tom de hover sutil para o off-white */
-        border-color: #f0ebe5;
-        color: #5a4132; /* Tom mais escuro do texto para o hover */
-        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2); /* Sombra no hover */
+        background-color: #f1f1f1; 
+        border-color: #f1f1f1;
+        color: var(--c-text); 
+        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2); 
       }
       
-      /* A regra `#cta-final .cta-inverted` não é mais necessária 
-        pois já definimos as cores na regra principal `.cta-inverted` 
-      */
-      
-      /* === FIM - CÓDIGO DO BOTÃO INVERTIDO === */
-      
-      /* CTA do Hero (Invertido) */
+      /* CTA do Hero (Agora é o primário) */
       .cta-hero {
-        background-color: var(--c-text-light);
-        color: var(--c-primary);
-        border-color: var(--c-text-light);
+        background-color: var(--c-primary); /* Fundo marrom */
+        color: var(--c-text-light); /* Texto claro */
+        border-color: var(--c-primary);
       }
       .cta-hero:hover, .cta-hero:focus-visible {
-        background-color: #f1f1f1;
-        border-color: #f1f1f1;
-        color: var(--c-primary-dark);
-        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+        background-color: var(--c-primary-dark);
+        border-color: var(--c-primary-dark);
+        color: var(--c-text-light);
+        box-shadow: 0 10px 20px -5px rgba(var(--rgb-primary), 0.3);
       }
       
       /* 5. Componentes Globais */
       
-      /* Barra de Progresso */
       #progress-bar {
         position: fixed;
         top: 0;
@@ -342,56 +348,42 @@
         transition: width 50ms linear;
       }
       
-/* Barra de Topo Dinâmica */
       #sticky-bar {
         position: fixed;
         top: 0; 
         left: 0;
         right: 0;
-        background-color: var(--c-support-2); /* Cor de fundo da barra */
-        color: var(--c-text); /* Cor do texto */
+        background-color: var(--c-brand-rose-dark); /* MUDANÇA: Cor Rosé Escuro */
+        color: var(--c-text);
         z-index: 1000;
-        padding: var(--spacing-sm) var(--spacing-md); /* Ajuste padding horizontal se necessário */
+        padding: var(--spacing-sm) var(--spacing-md);
         display: none; /* JS mostra */
         box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        overflow: hidden; /* Garante que nada transborde da barra */
-        min-height: 40px; /* Define uma altura mínima para consistência */
-        display: flex; /* Adicionado para centralizar conteúdo verticalmente */
-        align-items: center; /* Adicionado para centralizar conteúdo verticalmente */
+        display: flex;
+        align-items: center;
+        min-height: 40px; 
       }
       .sticky-bar-content {
         display: flex;
-        flex-direction: row; /* FORÇA layout horizontal */
-        align-items: center; /* Centraliza verticalmente */
-        justify-content: center; /* Centraliza horizontalmente */
-        text-align: center; /* Garante que o texto dentro do <p> esteja centralizado */
-        gap: var(--spacing-sm);
-        max-width: 1200px;
+        justify-content: center; 
+        align-items: center; 
+        width: 100%;
+        max-width: 1200px; 
         margin: 0 auto;
-        width: 100%; /* Garante que o container ocupe a largura */
-        overflow: hidden; /* Esconde texto que transborda no container */
       }
       #sticky-bar p {
         font-size: 0.9rem;
         font-weight: 500;
         margin: 0;
-        padding: 0 var(--spacing-sm); /* Adiciona um pequeno padding lateral ao texto */
-        flex-grow: 0; /* NÃO permite que o P cresça demais */
-        flex-shrink: 1; /* Permite que o P encolha se necessário */
-        
-        /* === INÍCIO DAS ALTERAÇÕES SOLICITADAS === */
-        white-space: normal; /* ALTERADO: Permite a quebra de linha */
-        overflow: visible;   /* ALTERADO: Garante que o texto completo seja visível */
-        text-overflow: clip;   /* ALTERADO: Remove os "..." */
-        /* === FIM DAS ALTERAÇÕES SOLICITADAS === */
-        
-        max-width: 100%; /* Garante que não ultrapasse o container */
-        line-height: 1.3; /* Ajusta a altura da linha para melhor encaixe */
+        padding: 0 var(--spacing-sm); 
+        white-space: normal; 
+        text-align: center; 
+        line-height: 1.4; 
+        overflow: visible; 
+        text-overflow: clip; 
       }
-      
-      /* As regras .cta-sticky-bar podem ser removidas se você já removeu o botão do JS */
+
       .cta-sticky-bar { 
-        /* Mantido caso você re-adicione o botão no futuro */
         font-size: 0.8rem;
         font-weight: 700;
         padding: var(--spacing-sm) var(--spacing-md);
@@ -403,14 +395,16 @@
         text-transform: uppercase;
         letter-spacing: 0.05em;
         box-shadow: none;
-        flex-shrink: 0; /* Impede que o botão encolha */
+        flex-shrink: 0; 
       }
       .cta-sticky-bar:hover {
         background-color: var(--c-primary-dark);
         text-decoration: none;
         transform: none;
-        box-shadow: none;      }      
-/* Header Principal (Flutuante) */
+        box-shadow: none;
+      }
+      
+      /* Header Principal (Flutuante) */
       .main-header {
         position: fixed;
         top: 0; /* JS ajusta */
@@ -423,7 +417,7 @@
         transition: top var(--transition-fast), background-color 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
       }
       .main-header.is-scrolled {
-        background-color: var(--c-bg); /* Fundo fica branco/bege claro */
+        background-color: var(--c-bg); /* Fundo fica branco */
         border-color: var(--c-border);
         box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       }
@@ -445,68 +439,34 @@
       }
       .main-header nav a {
         font-weight: 500;
-        color: var(--c-text-light); /* Texto claro por padrão (sobre o Hero) */
+        color: var(--c-text); /* MUDANÇA: Texto escuro por padrão */
         text-decoration: none;
         font-size: 0.9rem;
-        text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        text-shadow: none;
         text-transform: uppercase;
         letter-spacing: 0.05em;
-        transition: color 300ms ease; /* Adiciona transição suave de cor */
+        transition: color 300ms ease; 
       }
       
-      /* Regra para os links NORMAIS no scroll */
       .main-header.is-scrolled nav a {
-        color: var(--c-text-body); /* Texto fica escuro no scroll */
+        color: var(--c-text-body); /* Mantém escuro */
         text-shadow: none;
       }
       
-      /* === INÍCIO DA ADIÇÃO: Regra ESPECÍFICA para o BOTÃO no scroll === */
+      .main-header .cta-sticky-bar {
+         color: var(--c-text-light); 
+         background-color: var(--c-primary);
+         border-color: var(--c-primary);
+         text-shadow: none; 
+      }
       .main-header.is-scrolled .cta-sticky-bar {
-        /* Garante que o texto do BOTÃO permaneça claro no scroll */
-        color: var(--c-text-light); 
-        
-        /* Garante que o fundo do BOTÃO permaneça marrom */
-        background-color: var(--c-primary);
-        border-color: var(--c-primary);
-        
-        /* Remove sombra de texto herdada (se houver) */
-        text-shadow: none; 
+         text-shadow: none;
       }
       
-      /* Ajusta também o estado :hover do botão quando scrollado */
-      .main-header.is-scrolled .cta-sticky-bar:hover {
-         color: var(--c-text-light); /* Mantém texto claro */
-         background-color: var(--c-primary-dark); /* Fundo escurece um pouco */
+      .main-header .cta-sticky-bar:hover {
+         color: var(--c-text-light); 
+         background-color: var(--c-primary-dark); 
          border-color: var(--c-primary-dark);
-      }
-      /* === FIM DA ADIÇÃO === */      
-      
-      /* Rodapé */
-      footer {
-        background-color: var(--c-bg-light);
-        padding: var(--spacing-xl) var(--spacing-md);
-        text-align: center;
-        border-top: 1px solid var(--c-border);
-      }
-      footer p {
-        font-size: 0.875rem;
-        color: #666;
-        margin-bottom: var(--spacing-sm);
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      footer p.disclaimer {
-        font-size: 0.75rem;
-        font-style: italic;
-        border-top: 1px solid var(--c-border);
-        padding-top: var(--spacing-md);
-        margin-top: var(--spacing-md);
-      }
-      footer a {
-        color: #666;
-        font-weight: 500;
-        text-decoration: underline;
       }
       
       /* Ícone Flutuante WhatsApp */
@@ -590,6 +550,12 @@
         visibility: visible;
         pointer-events: auto;
       }
+      
+      /* Popup de Saída */
+      .exit-popup {
+          flex-direction: column; /* Correção do bug 'caixa branca vazia' */
+      }
+      
       .modal-overlay {
         position: absolute;
         top: 0;
@@ -635,54 +601,6 @@
         color: var(--c-text);
       }
 
-      /* Modal de Aplicação (Formulário) */
-      #application-modal .modal-content {
-        text-align: left;
-      }
-      #application-modal h2 {
-        text-align: center;
-        font-size: 2.2rem; /* Ajustado para Playfair */
-        color: var(--c-primary);
-      }
-      #application-modal p {
-        text-align: center;
-        margin-bottom: var(--spacing-lg);
-      }
-      .form-group {
-        margin-bottom: var(--spacing-md);
-      }
-      .form-group label {
-        display: block;
-        font-weight: 500;
-        margin-bottom: var(--spacing-sm);
-        font-size: 0.9rem;
-      }
-      .form-group input,
-      .form-group select {
-        width: 100%;
-        padding: 16px;
-        font-family: var(--font-main);
-        font-size: 1rem;
-        border: 1px solid var(--c-border);
-        border-radius: 8px;
-        background: var(--c-bg-light);
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-      }
-      .form-group select {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23755441'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: right 16px center;
-        background-size: 1.5em;
-        padding-right: 48px;
-      }
-      #application-modal .cta {
-        width: 100%;
-        max-width: 100%;
-        margin-top: var(--spacing-lg);
-      }
-      
       /* Modal de Saída */
       #exit-popup h2 {
          font-size: 2.2rem;
@@ -729,71 +647,77 @@
         padding: var(--spacing-xxl) 0;
       }
       
-      /* === INÍCIO - HERO FULL-BLEED (PONTO 2) === */
+      /* === INÍCIO - HERO COM NOVA "JOGADA DE COR" === */
       #hero {
         position: relative;
         min-height: 90vh; 
         padding: var(--spacing-xxl) 0;
-        padding-top: 140px; /* Espaço para header flutuante */
+        padding-top: 140px; 
         display: flex;
         align-items: center;
         overflow: hidden;
-        color: var(--c-text-light);
+        color: var(--c-text); /* MUDANÇA: Texto escuro */
         
-        /* MUDANÇA: Substitua pela sua imagem 1920x1080 */
-        background-image: url('https://i.ibb.co/VFZxPSV/capa-primeiro-bloco.webp');
-        background-size: cover;
-        background-position: center center;
-        /* background-attachment: fixed; */ /* Opcional: Efeito Parallax */
+        /* MUDANÇA: Fundo Rosé Pálido */
+        background-color: var(--c-brand-rose-bg);
+        
+        /* IMAGEM DE FUNDO (COMENTADA, CASO QUEIRA VOLTAR) */
+        /* background-image: url('https://i.ibb.co/rKmMvFmb/Capa-bloco-site-comprimido.webp'); */
+        /* background-size: cover; */
+        /* background-position: center center; */
       }
       
       #hero::before {
-        /* MUDANÇA: Overlay REATIVADO para legibilidade */
-        display: block; 
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        /* Ajuste a opacidade (0.5 = 50%) conforme a sua foto */
-        background-color: rgba(var(--rgb-primary), 0.2); 
-        z-index: 1;
+        display: none; /* Overlay removido */
       }
       
       #hero .container {
         position: relative;
         z-index: 2;
-        /* Remove o grid de colunas */
       }
       
-      /* Removemos .hero-content, então estilizamos direto */
       #hero h1, 
       #hero p.subheadline,
       #hero li {
-        color: var(--c-text-light);
-        text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+        color: var(--c-text); /* MUDANÇA: Texto escuro */
+        text-shadow: none; /* Sombra removida */
         text-align: left;
       }
       
+      /* Efeito de Duas Fontes no H1 */
       #hero h1 {
-        margin-bottom: var(--spacing-md);
+        font-family: var(--font-main);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: clamp(2.5rem, 7vw, 3.8rem); 
+        text-align: left; 
+        max-width: 600px; /* Ajustado */
+        margin-left: 0;
+        line-height: 1.2;
       }
+      #hero h1 em {
+          font-family: var(--font-heading);
+          font-style: italic;
+          font-weight: 700;
+          text-transform: none;
+          display: block; /* Quebra a linha */
+      }
+
       #hero p.subheadline {
           margin-left: 0;
           max-width: 500px;
+          color: var(--c-text-body); /* Tom de corpo para subheadline */
       }
       
-      /* === INÍCIO - CHECKLIST CORRIGIDO (PONTO 3) === */
       .hero-checklist {
         list-style: none;
         margin: var(--spacing-lg) 0;
         padding: 0;
         display: flex;
         flex-direction: column;
-        gap: var(--spacing-md); /* Mais espaçamento */
+        gap: var(--spacing-md); 
         width: 100%;
-        max-width: 500px; /* Limita a largura para elegância */
+        max-width: 500px; 
       }
       .hero-checklist li {
         font-size: 1.1rem;
@@ -807,22 +731,29 @@
         left: 0;
         top: 2px;
         font-weight: 700;
-        color: var(--c-support-2); /* Sotaque dourado */
+        color: var(--c-primary); /* MUDANÇA: Checkmark marrom */
       }
-      /* === FIM - CHECKLIST CORRIGIDO (PONTO 3) === */
       
       #hero .cta-hero {
         margin-top: var(--spacing-sm);
-        max-width: 300px; /* Botão com largura definida */
+        max-width: 300px; 
+        /* MUDANÇA: Botão principal marrom */
+        background-color: var(--c-primary);
+        color: var(--c-text-light);
+        border-color: var(--c-primary);
       }
+      #hero .cta-hero:hover {
+        background-color: var(--c-primary-dark);
+        border-color: var(--c-primary-dark);
+        color: var(--c-text-light);
+      }
+
       #hero small {
         margin-top: var(--spacing-sm);
-        color: rgba(255,255,255,0.8);
+        color: var(--c-text-body);
       }
       
-      /* Removemos a regra .hero-image-wrapper */
-      
-      /* === FIM - HERO FULL-BLEED === */
+      /* === FIM - HERO COM NOVA "JOGADA DE COR" === */
       
       
       /* Problema */
@@ -848,7 +779,7 @@
       }
       #mecanismo .myth-box {
         background-color: var(--c-bg);
-        border: 1px solid var(--c-support-2);
+        border: 1px solid var(--c-gold); /* MUDANÇA: Borda Dourada */
         padding: var(--spacing-lg);
         margin: var(--spacing-lg) 0;
         border-radius: 8px;
@@ -869,200 +800,169 @@
       #mecanismo .cta {
         margin-top: var(--spacing-lg);
       }
-/* === INÍCIO - CSS Bloco Maestria (CORRIGIDO PARA CENTRALIZAR E PROPORÇÃO 4:5) === */
+      
+      /* === INÍCIO - CSS Bloco Maestria (FUNDO ESCURO) === */
+      #maestria {
+          background-color: var(--c-text); /* MUDANÇA: Fundo Escuro */
+      }
+      #maestria h2, #maestria p {
+          color: var(--c-text-light);
+      }
+      #maestria .subheadline {
+          color: rgba(255,255,255,0.8);
+      }
+      #maestria .elegant-divider {
+          background-color: var(--c-gold); /* MUDANÇA: Divisor Dourado */
+      }
 
-/* O Grid Assimétrico */
-.maestria-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* 1 coluna mobile */
-    gap: var(--spacing-xl); 
-    align-items: stretch; /* Padrão 'stretch' para o mobile */
-}
+      .maestria-grid {
+          display: grid;
+          grid-template-columns: 1fr; 
+          gap: var(--spacing-xl); 
+          align-items: stretch; 
+      }
 
-/* Coluna do Manifesto (Texto) */
-.maestria-texto h4 {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--c-primary);
-    margin-top: var(--spacing-lg); 
-    margin-bottom: var(--spacing-sm);
-    padding-bottom: var(--spacing-sm);
-    border-bottom: 1px solid var(--c-border);
-}
-.maestria-texto h4:first-of-type { margin-top: 0; }
-.maestria-texto p {
-    font-size: 0.95rem;
-    color: var(--c-text-body);
-    margin-bottom: 0;
-}
+      .maestria-texto h4 {
+          font-family: var(--font-heading);
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: var(--c-gold); /* MUDANÇA: Títulos Dourados */
+          margin-top: var(--spacing-lg); 
+          margin-bottom: var(--spacing-sm);
+          padding-bottom: var(--spacing-sm);
+          border-bottom: 1px solid var(--c-gold); /* MUDANÇA: Borda Dourada */
+      }
+      .maestria-texto h4:first-of-type { margin-top: 0; }
+      .maestria-texto p {
+          font-size: 0.95rem;
+          color: rgba(255,255,255,0.8); /* MUDANÇA: Texto claro */
+          margin-bottom: 0;
+      }
 
-/* Coluna da Galeria (Carrossel "Pilha de Cartas") */
-.maestria-galeria {
-    position: relative;
-    min-height: 450px; /* Garante altura mínima no mobile */
-    display: flex;
-    align-items: center; /* Centraliza a "pilha" verticalmente DENTRO da coluna */
-    justify-content: center;
-    width: 100%;
-    height: auto; /* IMPORTANTE: Deixa a altura ser controlada pelo conteúdo */
-    padding-bottom: 70px; /* Espaço para os controles no mobile */
-}
+      .maestria-galeria {
+          position: relative;
+          min-height: 450px; 
+          display: flex;
+          align-items: center; 
+          justify-content: center;
+          width: 100%;
+          height: auto; 
+          padding-bottom: 70px; 
+      }
 
-/* A "Cena" 3D */
-.deck-stack-scene {
-    position: relative;
-    width: 80%; 
-    height: auto; /* IMPORTANTE: Deixa a altura ser controlada pelo aspect-ratio */
-    max-width: 400px; /* Limite a largura para respeitar a proporção 4:5 */
-    aspect-ratio: 4 / 5; /* FORÇA A PROPORÇÃO 4:5 */
-    perspective: 1500px;
-}
+      .deck-stack-scene {
+          position: relative;
+          width: 80%; 
+          height: auto; 
+          max-width: 400px; 
+          aspect-ratio: 4 / 5; 
+          perspective: 1500px;
+      }
 
-/* Cada item (carta) */
-.deck-stack-item {
-    position: absolute;
-    width: 100%;
-    height: 100%; /* Agora obedece o aspect-ratio do pai (.deck-stack-scene) */
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transform: translateY(30px) scale(0.8) rotate(0deg);
-    z-index: 1;
-    pointer-events: none; 
-    transition: transform 0.7s var(--ease-out-quint), 
-                opacity 0.7s var(--ease-out-quint), 
-                filter 0.7s var(--ease-out-quint),
-                z-index 0.7s step-end; 
-}
+      .deck-stack-item {
+          position: absolute;
+          width: 100%;
+          height: 100%; 
+          top: 0;
+          left: 0;
+          opacity: 0;
+          transform: translateY(30px) scale(0.8) rotate(0deg);
+          z-index: 1;
+          pointer-events: none; 
+          transition: transform 0.7s var(--ease-out-quint), 
+                      opacity 0.7s var(--ease-out-quint), 
+                      filter 0.7s var(--ease-out-quint),
+                      z-index 0.7s step-end; 
+      }
 
-.deck-stack-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    border-radius: 12px;
-    box-shadow: 0 15px 35px rgba(51, 41, 35, 0.15), 
-                0 5px 15px rgba(51, 41, 35, 0.1);  
-    border: 1px solid rgba(255, 255, 255, 0.2); 
-}
+      .deck-stack-item img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; 
+          border-radius: 12px;
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), /* Sombra mais escura */
+                      0 5px 15px rgba(0, 0, 0, 0.15);  
+          border: 1px solid rgba(255, 255, 255, 0.2); 
+      }
 
-/* === OS ESTADOS REFINADOS DA PILHA === */
+      .deck-stack-item.is-active-stack {
+          opacity: 1;
+          transform: translateY(0) scale(1) rotate(0deg);
+          z-index: 10;
+          pointer-events: auto;
+          filter: blur(0px) brightness(1); 
+          transition-delay: 0.1s; 
+      }
+      .deck-stack-item.is-active-stack img {
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 
+                      0 8px 20px rgba(0, 0, 0, 0.2);
+      }
 
-.deck-stack-item.is-active-stack {
-    opacity: 1;
-    transform: translateY(0) scale(1) rotate(0deg);
-    z-index: 10;
-    pointer-events: auto;
-    filter: blur(0px) brightness(1); 
-    transition-delay: 0.1s; 
-}
-.deck-stack-item.is-active-stack img {
-    box-shadow: 0 20px 40px rgba(51, 41, 35, 0.2), 
-                0 8px 20px rgba(51, 41, 35, 0.15);
-}
+      .deck-stack-item.is-next-stack-1 {
+          opacity: 0.8; 
+          transform: translateY(10px) scale(0.96); 
+          z-index: 9;
+          filter: blur(1px) brightness(0.95); 
+          transition-delay: 0s;
+      }
 
-.deck-stack-item.is-next-stack-1 {
-    opacity: 0.8; 
-    transform: translateY(10px) scale(0.96); 
-    z-index: 9;
-    filter: blur(1px) brightness(0.95); 
-    transition-delay: 0s;
-}
+      .deck-stack-item.is-next-stack-2 {
+          opacity: 0.6; 
+          transform: translateY(20px) scale(0.92); 
+          z-index: 8;
+          filter: blur(2px) brightness(0.9); 
+          transition-delay: 0s;
+      }
 
-.deck-stack-item.is-next-stack-2 {
-    opacity: 0.6; 
-    transform: translateY(20px) scale(0.92); 
-    z-index: 8;
-    filter: blur(2px) brightness(0.9); 
-    transition-delay: 0s;
-}
+      .deck-stack-item.is-exiting-stack {
+          opacity: 0;
+          transform: translateX(-80px) rotate(-8deg) scale(0.9); 
+          z-index: 5; 
+          transition: transform 0.7s var(--ease-out-quint), 
+                      opacity 0.6s ease-out, 
+                      z-index 0.7s step-start; 
+      }
 
-.deck-stack-item.is-exiting-stack {
-    opacity: 0;
-    transform: translateX(-80px) rotate(-8deg) scale(0.9); 
-    z-index: 5; 
-    transition: transform 0.7s var(--ease-out-quint), 
-                opacity 0.6s ease-out, 
-                z-index 0.7s step-start; 
-}
+      .deck-stack-item.is-returning-stack {
+          opacity: 0;
+          transform: translateX(80px) rotate(8deg) scale(0.9); 
+          z-index: 5;
+          transition-delay: 0s; 
+      }
 
-.deck-stack-item.is-returning-stack {
-    opacity: 0;
-    transform: translateX(80px) rotate(8deg) scale(0.9); 
-    z-index: 5;
-    transition-delay: 0s; 
-}
+      .deck-carousel-controls {
+          position: absolute;
+          bottom: -15px; 
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 20;
+          display: flex;
+          gap: var(--spacing-md);
+      }
 
-/* Controles de Navegação Minimalistas */
-.deck-carousel-controls {
-    position: absolute;
-    bottom: -15px; 
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 20;
-    display: flex;
-    gap: var(--spacing-md);
-}
+      .deck-carousel-btn {
+          background: transparent;
+          border: none;
+          color: var(--c-support-3); 
+          width: 44px; 
+          height: 44px;
+          border-radius: 50%;
+          font-size: 2.5rem; 
+          font-weight: 300; 
+          cursor: pointer;
+          transition: color var(--transition-fast), background-color var(--transition-fast);
+          line-height: 1; 
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+      .deck-carousel-btn:hover {
+          color: var(--c-gold); /* MUDANÇA: Hover Dourado */
+          background-color: rgba(255, 255, 255, 0.1); 
+      }
 
-.deck-carousel-btn {
-    background: transparent;
-    border: none;
-    color: var(--c-support-3); 
-    width: 44px; 
-    height: 44px;
-    border-radius: 50%;
-    font-size: 2.5rem; 
-    font-weight: 300; 
-    cursor: pointer;
-    transition: color var(--transition-fast), background-color var(--transition-fast);
-    line-height: 1; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.deck-carousel-btn:hover {
-    color: var(--c-primary); 
-    background-color: rgba(var(--rgb-primary), 0.1); 
-}
+      /* === FIM - CSS Bloco Maestria === */
 
-/* Media Query para Desktop (Ativa o Grid Assimétrico) */
-@media (min-width: 992px) {
-    .maestria-grid {
-        grid-template-columns: 1.2fr 1fr; 
-        align-items: center; /* AGORA SIM, centraliza a galeria em relação ao texto */
-    }
-    
-    .maestria-galeria {
-       min-height: 0; /* Reseta o min-height do mobile para desktop */
-       padding-bottom: 0; /* Remove padding extra do mobile */
-    }
-    
-    .deck-stack-scene {
-        width: 100%; /* Ocupa a largura total da coluna no desktop */
-        height: auto; /* Controlado pelo aspect-ratio */
-        max-width: none; /* Remove a limitação de largura no desktop */
-    }
-    .deck-carousel-controls {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        transform: none; 
-        padding-top: var(--spacing-lg); 
-    }
-}
-
-/* Media Query para Mobile (Ajusta a galeria para empilhar) */
-@media (max-width: 991px) {
-    .maestria-galeria {
-        min-height: 450px; 
-        padding-bottom: 70px; 
-    }
-    .deck-stack-scene {
-        width: 80%; /* Mantém 80% da largura da tela no mobile */
-        height: auto; /* Controlado pelo aspect-ratio */
-    }
-}
-/* === FIM - CSS Bloco Maestria (CORRIGIDO PARA CENTRALIZAR E PROPORÇÃO 4:5) === */
       /* Prova */
       .stats-grid {
         display: grid;
@@ -1095,12 +995,14 @@
       }
       #prova h3 {
         text-align: center;
-        margin-top: var(--spacing-xxl);
-        margin-bottom: var(--spacing-lg);
+        margin-top: var(--spacing-xxl); 
+        margin-bottom: var(--spacing-lg); 
       }
       #prova .cta {
-        display: block;
-        margin: var(--spacing-xl) auto 0;
+        display: block; 
+        margin-left: auto; 
+        margin-right: auto; 
+        margin-top: var(--spacing-xl); 
       }
       
       /* Carrossel */
@@ -1215,7 +1117,14 @@
         line-height: 1;
       }
       
-      /* Arsenal */
+      /* Arsenal (MUDANÇA DE COR) */
+      #arsenal {
+          background-color: var(--c-text); /* MUDANÇA: Fundo Escuro */
+      }
+      #arsenal h2, #arsenal .subheadline {
+          color: var(--c-text-light);
+      }
+      
       .arsenal-grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -1223,20 +1132,20 @@
         margin-top: var(--spacing-xl);
       }
       .arsenal-card {
-        background-color: var(--c-bg);
-        border: 1px solid var(--c-border);
+        background-color: #2a2a2a; /* MUDANÇA: Fundo do Card Escuro */
+        border: 1px solid #444; /* MUDANÇA: Borda escura */
         border-radius: 12px;
         padding: var(--spacing-lg);
-        box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         transition: transform var(--transition-fast), box-shadow var(--transition-slow);
       }
       .arsenal-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 40px -10px rgba(var(--rgb-primary), 0.3);
+        box-shadow: 0 10px 40px -10px rgba(0,0,0, 0.4);
       }
       .arsenal-card h3 {
-        color: var(--c-primary);
-        border-bottom: 2px solid var(--c-support-2);
+        color: var(--c-gold); /* MUDANÇA: Título Dourado */
+        border-bottom: 2px solid var(--c-gold); /* MUDANÇA: Borda Dourada */
         padding-bottom: var(--spacing-sm);
         margin-bottom: var(--spacing-md);
         font-size: 1.5rem;
@@ -1244,14 +1153,16 @@
       .arsenal-card p {
         font-size: 0.95rem;
         margin: 0;
+        color: rgba(255,255,255,0.8); /* MUDANÇA: Texto claro */
       }
-      /* === INÍCIO - CSS do Micro-Carrossel dentro do Card === */
+      
+      /* Micro-Carrossel (Arsenal) */
       .card-carousel {
         position: relative;
-        margin-bottom: var(--spacing-lg); /* Espaço entre carrossel e título */
-        border-radius: 8px; /* Mantém borda arredondada */
-        overflow: hidden; /* Garante que os botões não vazem */
-        border: 1px solid var(--c-border); /* Borda sutil */
+        margin-bottom: var(--spacing-lg); 
+        border-radius: 8px; 
+        overflow: hidden; 
+        border: 1px solid #444; /* MUDANÇA: Borda escura */
       }
       .card-carousel-viewport {
         overflow: hidden;
@@ -1263,28 +1174,26 @@
         margin: 0;
         transition: transform 300ms var(--ease-out-quint);
       }
-.card-carousel-track li {
+    .card-carousel-track li {
         flex: 0 0 100%;
         min-width: 100%;
-        /* A MÁGICA ESTÁ AQUI: Força a proporção 1:1 */
-        aspect-ratio: 1 / 1;
-        overflow: hidden; /* Garante que a imagem não vaze */
+        aspect-ratio: 1 / 1; 
+        overflow: hidden; 
       }
       .card-carousel-track img {
         display: block;
         width: 100%;
-        height: 100%; /* Faz a imagem preencher o <li> quadrado */
-        object-fit: cover; /* Cobre o espaço sem distorcer */
-        background-color: var(--c-bg-light); 
+        height: 100%; 
+        object-fit: cover; 
+        background-color: var(--c-text); 
         border-radius: 0;
-      }      
-      /* Botões de Navegação do Micro-Carrossel */
+      }       
       .card-carousel-btn {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         z-index: 2;
-        background-color: rgba(var(--rgb-primary), 0.7); /* Fundo semi-transparente */
+        background-color: rgba(var(--rgb-primary), 0.7); 
         color: var(--c-text-light);
         border: none;
         border-radius: 50%;
@@ -1294,17 +1203,17 @@
         line-height: 1;
         cursor: pointer;
         transition: background-color var(--transition-fast), opacity var(--transition-fast);
-        opacity: 0; /* Escondido por padrão */
+        opacity: 0; 
       }
       .arsenal-card:hover .card-carousel-btn,
-      .card-carousel-btn:focus-visible { /* Mostra no hover do card ou no foco do botão */
+      .card-carousel-btn:focus-visible { 
         opacity: 1;
       }
       .card-carousel-btn:hover {
         background-color: rgba(var(--rgb-primary), 0.9);
       }
       .card-carousel-btn:disabled {
-        opacity: 0.3 !important; /* Usa !important para garantir visibilidade */
+        opacity: 0.3 !important; 
         cursor: not-allowed;
       }
       .card-carousel-prev {
@@ -1313,13 +1222,20 @@
       .card-carousel-next {
         right: var(--spacing-sm);
       }
-      /* === FIM - CSS do Micro-Carrossel dentro do Card === */
+      
       #arsenal .cta {
         display: block;
         margin: var(--spacing-xl) auto 0;
+        /* MUDANÇA: Botão secundário invertido para fundo escuro */
+        color: var(--c-text-light);
+        border-color: var(--c-text-light);
+      }
+      #arsenal .cta:hover {
+          background-color: var(--c-text-light);
+          color: var(--c-text);
       }
       
-/* FAQ (Com animação suave e fonte ajustada) */
+    /* FAQ (Com animação suave e fonte ajustada) */
       .faq-accordion {
         max-width: 800px;
         margin: var(--spacing-xl) auto 0;
@@ -1357,7 +1273,6 @@
         color: var(--c-primary);
         transition: transform var(--transition-slow);
       }
-      /* Esta regra do ícone +/- está CORRETA e funciona com o JS acima */
       .faq-question[aria-expanded="true"]::after {
         content: '−';
         transform: translateY(-50%) rotate(180deg);
@@ -1370,8 +1285,6 @@
         transition: grid-template-rows 0.4s ease-in-out; /* Animação suave */
       }
       
-      /* === MUDANÇA NO SELETOR (A CORREÇÃO) === */
-      /* Agora usa a classe .is-open no item-pai */
       .faq-item.is-open .faq-answer-wrapper {
         grid-template-rows: 1fr; /* Aberto */
       }
@@ -1393,23 +1306,37 @@
         color: var(--c-text);
         margin-bottom: var(--spacing-sm);
       }
-      /* CTA Final */
+      
+      /* CTA Final (MUDANÇA DE COR) */
       #cta-final {
         text-align: center;
+        background-color: var(--c-brand-rose-bg); /* MUDANÇA: Fundo Rosé */
       }
       #cta-final h2 {
         font-size: clamp(2rem, 6vw, 3rem);
+        color: var(--c-text); /* MUDANÇA: Texto Escuro */
       }
       #cta-final p {
         margin: var(--spacing-sm) auto var(--spacing-lg);
         font-size: 1.2rem;
-        color: rgba(255,255,255,0.9);
+        color: var(--c-text-body); /* MUDANÇA: Texto Escuro */
       }
       #cta-final small {
         display: block;
         margin-top: var(--spacing-sm);
-        color: rgba(255,255,255,0.8);
+        color: var(--c-text-body); /* MUDANÇA: Texto Escuro */
       }
+      /* MUDANÇA: Botão do CTA Final agora é .cta-primary (Marrom) */
+      #cta-final .cta {
+        background-color: var(--c-primary);
+        color: var(--c-text-light);
+        border-color: var(--c-primary);
+      }
+       #cta-final .cta:hover {
+        background-color: var(--c-primary-dark);
+        border-color: var(--c-primary-dark);
+      }
+
 
       /* 8. Media Queries (Desktop) */
       @media (min-width: 768px) {
@@ -1420,7 +1347,7 @@
         }
         .sticky-bar-content {
           flex-direction: row;
-          text-align: left;
+          /* text-align: left; */ /* Removido para manter centralizado */
         }
         #sticky-bar p {
           font-size: 0.9rem;
@@ -1459,10 +1386,8 @@
         #hero {
           min-height: 80vh; 
           padding: var(--spacing-xxl) 0;
-          padding-top: 160px; /* Mais espaço para header */
+          padding-top: 160px; 
         }
-        
-        /* Regras de grid e imagem removidas */
         
         /* Grid de Stats (Layout Premium) */
         .stats-grid {
@@ -1475,6 +1400,32 @@
         }
       }
       
+      @media (min-width: 992px) {
+        /* Grid Assimétrico (Maestria) */
+        .maestria-grid {
+            grid-template-columns: 1.2fr 1fr; 
+            align-items: center; 
+        }
+        
+        .maestria-galeria {
+           min-height: 0; 
+           padding-bottom: 0; 
+        }
+        
+        .deck-stack-scene {
+            width: 100%; 
+            height: auto; 
+            max-width: none; 
+        }
+        .deck-carousel-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: none; 
+            padding-top: var(--spacing-lg); 
+        }
+      }
+
       @media (min-width: 1024px) {
         /* Arsenal (Grid 3 colunas) */
         .arsenal-grid {
@@ -1491,6 +1442,161 @@
         }
       }
       
+      /* === INÍCIO - CSS do Rodapé e Modais Legais (CORRIGIDO) === */
+      
+      /* Substitui a regra 'footer' genérica */
+      footer[role="contentinfo"] {
+        font-family: 'Montserrat', -apple-system, sans-serif; /* Alinhado ao seu design */
+        color: var(--c-text-body); /* Alinhado à paleta */
+        text-align: center;
+        padding: var(--spacing-xl) var(--spacing-md);
+        background-color: var(--c-bg-light); /* Fundo claro */
+      }
+      
+      footer[role="contentinfo"] p {
+        font-size: 0.8rem; /* 13px */
+        line-height: 1.6;
+        margin: var(--spacing-sm) 0;
+        max-width: none; /* Reseta o max-width de p */
+      }
+
+      footer[role="contentinfo"] p:first-of-type {
+        font-size: 0.75rem; /* 12px */
+        opacity: 0.7;
+      }
+
+      /* Os gatilhos do Pop-up */
+      footer[role="contentinfo"] a {
+        color: var(--c-primary); /* Cor primária */
+        opacity: 0.9;
+        text-decoration: underline; /* Mantém sublinhado para clareza */
+        font-weight: 500;
+        transition: opacity 0.3s ease;
+        cursor: pointer; /* Indica que é clicável */
+      }
+
+      footer[role="contentinfo"] a:hover {
+        opacity: 0.7;
+        text-decoration: underline; /* Garante hover */
+      }
+
+      footer[role="contentinfo"] p.disclaimer {
+        font-size: 0.7rem; /* 11px */
+        opacity: 0.7;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: var(--spacing-md);
+      }
+
+      footer[role="contentinfo"] p.copyright {
+        font-size: 0.75rem; /* 12px */
+        opacity: 0.7;
+        margin-top: var(--spacing-md);
+      }
+
+      /* Estilo do Sistema de Pop-up (Modal) */
+      .modal-overlay {
+        display: none; /* Oculto por padrão */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(30,20,10,0.7); /* Fundo escurecido da paleta */
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        z-index: 1000; /* Abaixo do modal, acima de tudo */
+        animation: fadeIn 0.3s ease;
+      }
+
+      .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 900px; /* Largura máxima */
+        max-height: 80vh; /* Altura máxima (importante!) */
+        
+        /* === CORREÇÃO "CAIXA BRANCA VAZIA" === */
+        display: none; /* JS controla isso */
+        flex-direction: column;
+        /* === FIM DA CORREÇÃO === */
+        
+        background-color: var(--c-bg); /* Fundo do site */
+        border-radius: 12px;
+        z-index: 1001; /* Acima do overlay */
+        border: 1px solid var(--c-border);
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        animation: slideIn 0.4s var(--ease-out-quint);
+      }
+
+      .modal-content {
+        padding: 30px 40px;
+        
+        /* === CORREÇÃO "CAIXA BRANCA VAZIA" === */
+        flex: 1 1 auto; /* Faz o conteúdo preencher o espaço do modal */
+        /* === FIM DA CORREÇÃO === */
+        
+        overflow-y: auto; /* Scroll se o texto for longo */
+        color: var(--c-text-body);
+        font-family: var(--font-main);
+      }
+
+      /* Estilo do Conteúdo do Pop-up */
+      .modal-content h1 {
+        font-family: var(--font-heading); /* Playfair */
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--c-primary);
+        border-bottom: 1px solid var(--c-border);
+        padding-bottom: 10px;
+        margin-top: 0;
+      }
+      .modal-content h2 {
+        font-family: var(--font-heading); /* Playfair */
+        font-size: 1.5rem;
+        color: var(--c-text);
+        margin-top: 30px;
+        font-weight: 700;
+      }
+      .modal-content p, .modal-content li {
+        font-size: 1rem;
+        line-height: 1.7;
+        opacity: 0.9;
+      }
+      .modal-content ul {
+        padding-left: 20px;
+      }
+
+      /* Botão de Fechar "Chique" */
+      .modal-close {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        font-size: 36px;
+        font-weight: 300;
+        color: var(--c-support-3);
+        cursor: pointer;
+        transition: color 0.3s ease;
+        line-height: 1;
+      }
+      .modal-close:hover {
+        color: var(--c-primary);
+      }
+
+      /* Animações */
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes slideIn {
+        from { opacity: 0; transform: translate(-50%, -45%); }
+        to { opacity: 1; transform: translate(-50%, -50%); }
+      }
+      /* === FIM - CSS do Rodapé e Modais Legais === */
+      
     </style>
 </head>
 <body>
@@ -1499,7 +1605,7 @@
     
     <div id="sticky-bar" class="sticky-bar" role="alert"></div>
 
-<header class="main-header" id="main-header" role="banner">
+    <header class="main-header" id="main-header" role="banner">
         <div class="container">
             <a href="/" aria-label="Página inicial - Dra. Cristiane Caldeira">
                 <img src="https://i.ibb.co/NdLh3ccf/logo.png" alt="Logo Dra. Cristiane Caldeira" width="200" height="55">
@@ -1526,9 +1632,9 @@
         <section id="hero">
             <div class="container">
                 
-                <h1 class="reveal-on-scroll" style="font-size: clamp(2.5rem, 7vw, 3.8rem); text-align: left; max-width: 500px; margin-left: 0;">Você também foge das fotos? Ou, Pior: se olha no espelho e sente que não é mais você?</h1>
+                <h1 class="reveal-on-scroll" style="font-size: clamp(2.5rem, 7vw, 3.8rem); text-align: left; max-width: 600px; margin-left: 0; line-height: 1.2;">Você também foge das fotos? <em>Ou, Pior: se olha no espelho e sente que não é mais você?</em></h1>
                 
-                <p class="subheadline reveal-on-scroll" style="--delay: 100ms;">A imagem que o espelho reflete (rosto ou corpo) não é mais a mulher que você é... Recupere o controle! A Estética de Alta Performance é a sua resposta científica para restaurar a sua melhor versão, da cabeça aos pés — sem cirurgia...</p>
+                <p class="subheadline reveal-on-scroll" style="--delay: 100ms; text-align: left; max-width: 500px; margin-left: 0;">A imagem que o espelho reflete (rosto ou corpo) não é mais a mulher que você é... Recupere o controle! A Estética de Alta Performance é a sua resposta científica para restaurar a sua melhor versão, da cabeça aos pés — sem cirurgia...</p>
                                 
                 <ul class="hero-checklist reveal-on-scroll" style="--delay: 300ms;">
                     <li>Restauração 360° (Facial & Corporal): A tecnologia que reconstrói ativamente seu colágeno.</li>
@@ -1536,22 +1642,22 @@
                     <li>A Prova Imediata: Resultados de "Alta Performance" visíveis na primeira sessão.</li>
                 </ul>
                 
-<a href="https://wa.me/5516993255934?text=Ol%C3%A1!%20Eu%20vim%20pelo%20site%20da%20Dra.%20Cristiane%20e%20quero%20mais%20detalhes%20sobre%20os%20procedimentos%20por%20gentileza..." 
+                <a href="https://wa.me/5516993255934?text=Ol%C3%A1!%20Eu%20vim%20pelo%20site%20da%20Dra.%20Cristiane%20e%20quero%20mais%20detalhes%20sobre%20os%20procedimentos%20por%20gentileza..." 
                    class="cta cta-hero wa-trigger reveal-on-scroll" 
                    style="--delay: 400ms;" 
                    target="_blank" 
                    rel="noopener">
                     INICIAR MEU DIAGNÓSTICO PERSONALIZADO
                 </a>
-                <small class="reveal-on-scroll" style="--delay: 450ms; display: block;">Agende seu atendimento para sua Transformação!</small>
+                <small class="reveal-on-scroll" style="--delay: 450ms; display: block; text-align: left; max-width: 300px; margin-left: 0;">Agende seu atendimento para sua Transformação!</small>
                 
-                </div>
+            </div>
         </section>
 
         <section id="problema" class="section-bg-light">
             <div class="container">
                 <h2 class="reveal-on-scroll">Você "dá conta de tudo"! Menos da imagem que vê no espelho...</h2>
-                <p class="reveal-on-scroll" style="--delay: 100ms;">
+                <p class="reveal-on-scroll" style="--delay: 100ms; font-size: 1.25rem; font-weight: 500; color: var(--c-text);">
                     Você é a mulher que resolve. A que cuida de tudo e de todos (da família à equipe). Forte. Respeitada. Mas a imagem que a câmera reflete não mente: a flacidez apareceu. O "bigode chinês" está mais fundo. O "bumbum" parece "murcho". Você se sente insegura, invisível, e com **raiva** por sua imagem não acompanhar mais sua performance, como você realmente gostaria de estar...
                 </p>
             </div>
@@ -1568,7 +1674,7 @@
                     <p>A medicina tradicional é fundamental para mudar o corpo cirurgicamente. Mas quando o objetivo é restaurar sua pele sem cortes, é preciso um foco em reconstrução.</p>
                 </div>
                 
-                <p class="reveal-on-scroll" style="--delay: 200ms; font-style: italic;">"Prazer! Sou a Dra. Cristiane Caldeira, Especialista em Estética de Alta Performance, e minha missão não é mudar você; é usar a ciência (amparada pela Lei 13.643/18) para devolver sua pele ao auge da performance dela. Nós oferecemos Protocolos Únicos: a Associação Inteligente de Tecnologias de Ponta. Não é mágica, é Ciência Aplicada com Arte!"</p>
+                <p class="reveal-on-scroll" style="--delay: 200ms; font-style: italic; color: var(--c-text); font-weight: 500;">"Prazer! Sou a Dra. Cristiane Caldeira, Especialista em Estética de Alta Performance, e minha missão não é mudar você; é usar a ciência (amparada pela Lei 13.643/18) para devolver sua pele ao auge da performance dela. Nós oferecemos Protocolos Únicos: a Associação Inteligente de Tecnologias de Ponta. Não é mágica, é Ciência Aplicada com Arte!"</p>
                 
                 <a href="#arsenal" class="cta cta-secondary reveal-on-scroll" style="--delay: 300ms;">
                     CONHECER OS PROTOCOLOS
@@ -1576,10 +1682,9 @@
             </div>
         </section>
 
-<section id="maestria" class="section-bg-light">
-    <div class="container">
+<section id="maestria" class="section-bg-dark"> <div class="container">
         
-        <p class="subheadline reveal-on-scroll" style="max-width: 800px; font-weight: 500; color: var(--c-text); margin-bottom: var(--spacing-sm); font-size: 1.3rem;">
+        <p class="subheadline reveal-on-scroll" style="max-width: 800px; font-weight: 500; margin-bottom: var(--spacing-sm); font-size: 1.3rem;">
              Mais de 27 Anos de Maestria... Mais de 80 Especializações!
         </p>
         <h2 class="reveal-on-scroll" style="--delay: 50ms;">Resultados de "Alta Performance" não nascem do acaso.<br> Nascem de uma obsessão implacável pela excelência.</h2>
@@ -1602,7 +1707,7 @@
                 <p>A clínica possui os equipamentos estéticos mais avançados do mundo. A Dra. Cristiane não apenas os opera; ela leciona "Mentorias Individuais" para ensinar outros profissionais a usá-los.</p>
                 
                 <h4>A Abordagem 360° (O Fim do "Efeito Sanfona")</h4>
-                <p>Esta não é uma clínica de estética comum. Temos uma parceria exclusiva com médicos para protocolos como Mounjaro e psiquiatras especializados em compulsão alimentar. Nós não tratamos apenas o sintoma (a gordura); nós tratamos a causa.</p>
+                <p>Esta não é uma clínica de estética comum. Temos uma parceria exclusiva com médicos para protocols como Mounjaro e psiquiatras especializados em compulsão alimentar. Nós não tratamos apenas o sintoma (a gordura); nós tratamos a causa.</p>
                 
                 <h4>A Experiência "Chique"</h4>
                 <p>Da clínica aconchegante à excelência do primeiro contato ao pós-tratamento, tudo é desenhado para uma experiência de "Alto Padrão".</p>
@@ -1649,7 +1754,8 @@
                 </div>
             </div>
 
-        </div> </div>
+        </div> 
+    </div>
 </section>
         <section id="prova" class="section-bg-light">
             <div class="container">
@@ -1661,20 +1767,19 @@
                 <p>Procedimentos Executados</p>
             </div>
             <div class="stat-item reveal-child" style="--delay: 200ms;">
-                 <span class="count-up" data-target="27" data-duration="2000" data-suffix="+">0</span>
+                <span class="count-up" data-target="27" data-duration="2000" data-suffix="+">0</span>
                 <p>Anos de Experiência</p>
             </div>
             <div class="stat-item reveal-child" style="--delay: 300ms;">
-                 <span class="count-up" data-target="100" data-duration="2000" data-suffix="%">0</span>
+                <span class="count-up" data-target="100" data-duration="2000" data-suffix="%">0</span>
                 <p>Focada em Resultados Naturais</p>
             </div>
             <div class="stat-item reveal-child" style="--delay: 400ms;">
-                 <span class="count-up" data-target="99.8" data-duration="2000" data-suffix="%">0</span>
+                <span class="count-up" data-target="99.8" data-duration="2000" data-suffix="%">0</span>
                 <p>Índice de Satisfação</p>
             </div>
         </div>
-                </div>
-                                
+                
                 <h3 class="reveal-on-scroll" style="--delay: 200ms;">Elas não foram "mudadas"... Elas acessaram sua: "Melhor Versão"!</h3>
 
                 <div class="carousel reveal-on-scroll" id="carousel-testimonials" aria-label="Depoimentos de pacientes" style="--delay: 250ms;">
@@ -1734,8 +1839,7 @@
             </div>
         </section>
 
-<section id="arsenal" class="section-bg-light">
-    <div class="container">
+<section id="arsenal" class="section-bg-dark"> <div class="container">
         <h2 class="reveal-on-scroll">Por que ir a 5 especialistas diferentes, se pode resolver todos os seus desafios em um único lugar?</h2>
         <p class="subheadline reveal-on-scroll" style="--delay: 100ms; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto;">
             Uma Solução de Alta Performance para Cada Desafio. Não importa sua queixa! Nossos Protocolos Únicos (que associam Bioestimuladores, Criolipólise, Lasers e Radiofrequência Robótica) estão prontos para esculpir sua melhor versão.
@@ -1744,7 +1848,7 @@
         <div class="arsenal-grid reveal-on-scroll is-visible" style="--delay: 200ms;">
 
             <div class="arsenal-card reveal-child" style="--delay: 200ms;">
-                 <div class="card-carousel">
+                <div class="card-carousel">
                     <div class="card-carousel-viewport">
                         <ul class="card-carousel-track">
                             <li><img src="https://i.ibb.co/7xLb23LF/1.webp" alt="Resultado Lábios 1" loading="lazy" width="400" height="400"></li>
@@ -1774,7 +1878,7 @@
                     <button class="card-carousel-btn card-carousel-next" aria-label="Próximo">&gt;</button>
                 </div>
                 <h3>Gordura Localizada & Contorno Corporal</h3>
-                <p>O Arsenal Tecnológico que age onde a academia e a dieta falham. Protocolos não-invasivos que destroem células de gordura...</p>
+                <p>O arsenal tecnológico que age onde a academia e a dieta falham. Protocolos não-invasivos que destroem células de gordura...</p>
             </div>
 
             <div class="arsenal-card reveal-child" style="--delay: 400ms;">
@@ -2335,6 +2439,7 @@
           }, { threshold: 0.5 }); 
           observer.observe(proofSection);
         }        
+        
         // --- 9. Animação "Revelar ao Rolar" ---
         const revealElements = document.querySelectorAll('.reveal-on-scroll');
         const revealObserver = new IntersectionObserver((entries) => {
@@ -2351,74 +2456,54 @@
         });
         
         revealElements.forEach(el => revealObserver.observe(el));
+        
+        // --- 11. Animação de Contagem RÁPIDA (Começa de ~90%) ---
+        const countUpElements = document.querySelectorAll('.count-up');
+        const countUpObserver = new IntersectionObserver((entries) => {
+             entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const span = entry.target;
+                    if (span.dataset.animated === 'true') return; 
 
-      }); // Fim do DOMContentLoaded
+                    const target = parseFloat(span.dataset.target);
+                    const duration = parseInt(span.dataset.duration) / 3 || 700; 
+                    const suffix = span.dataset.suffix || '';
+                    const isFloat = target % 1 !== 0; 
+                    let start = target * 0.9; 
+                    const startTime = performance.now(); 
 
-      // === INÍCIO - Animação de Contagem RÁPIDA (Começa de ~90%) ===
+                    const updateCount = (currentTime) => {
+                        const elapsedTime = currentTime - startTime;
+                        const progress = Math.min(elapsedTime / duration, 1); 
+                        let currentVal = start + (target - start) * progress;
 
-document.addEventListener('DOMContentLoaded', () => {
-    const countUpElements = document.querySelectorAll('.count-up');
-
-    const startCountAnimation = (entry) => {
-        if (entry.isIntersecting) {
-            const span = entry.target;
-            // Evita re-animar se já animou
-            if (span.dataset.animated === 'true') return; 
-
-            const target = parseFloat(span.dataset.target);
-            // Reduzimos a duração para a contagem ser mais rápida no trecho final
-            const duration = parseInt(span.dataset.duration) / 3 || 700; // Ex: 1/3 da duração original, ou 700ms
-            const suffix = span.dataset.suffix || '';
-            const isFloat = target % 1 !== 0; // Verifica se é um número float
-
-            // === MUDANÇA PRINCIPAL: Começa de ~90% do valor final ===
-            let start = target * 0.9; 
-            // === FIM DA MUDANÇA PRINCIPAL ===
-
-            const startTime = performance.now(); // Tempo inicial da animação
-
-            const updateCount = (currentTime) => {
-                const elapsedTime = currentTime - startTime;
-                const progress = Math.min(elapsedTime / duration, 1); // Progresso da animação (0 a 1)
-                
-                // Calcula o valor atual baseado no progresso (interpolação linear)
-                let currentVal = start + (target - start) * progress;
-
-                if (progress < 1) {
-                    if (isFloat) {
-                        span.textContent = currentVal.toFixed(1) + suffix; 
-                    } else {
-                        span.textContent = Math.ceil(currentVal).toLocaleString('pt-BR') + suffix; 
-                    }
+                        if (progress < 1) {
+                            if (isFloat) {
+                                span.textContent = currentVal.toFixed(1) + suffix; 
+                            } else {
+                                span.textContent = Math.ceil(currentVal).toLocaleString('pt-BR') + suffix; 
+                            }
+                            requestAnimationFrame(updateCount);
+                        } else {
+                            if (isFloat) {
+                                span.textContent = target.toFixed(1) + suffix;
+                            } else {
+                                span.textContent = target.toLocaleString('pt-BR') + suffix;
+                            }
+                            span.dataset.animated = 'true'; 
+                            countUpObserver.unobserve(span); // Para de observar
+                        }
+                    };
                     requestAnimationFrame(updateCount);
-                } else {
-                    // Garante que o valor final exato seja exibido
-                    if (isFloat) {
-                        span.textContent = target.toFixed(1) + suffix;
-                    } else {
-                        span.textContent = target.toLocaleString('pt-BR') + suffix;
-                    }
-                    span.dataset.animated = 'true'; // Marca como animado
-                    observer.unobserve(span); // Para de observar depois de contar
                 }
-            };
-            requestAnimationFrame(updateCount); // Inicia a animação
-        }
-    };
+            });
+        }, { threshold: 0.5 });
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(startCountAnimation);
-    }, {
-        threshold: 0.5 // Inicia a animação quando 50% do elemento está visível
-    });
+        countUpElements.forEach(el => {
+            countUpObserver.observe(el);
+        });
 
-    countUpElements.forEach(el => {
-        observer.observe(el);
-    });
-});
-
-// === FIM - Animação de Contagem RÁPIDA ===
-// --- 11. Carrossel de Pilha de Cartas (Maestria) ---
+        // --- 12. Carrossel de Pilha de Cartas (Maestria) ---
         function initDeckCarousel() {
             const container = document.getElementById('deck-carousel-container');
             if (!container) return;
@@ -2427,13 +2512,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const prevBtn = container.querySelector('.deck-carousel-prev');
             const nextBtn = container.querySelector('.deck-carousel-next');
 
-            if (!items || items.length === 0) return;
+            if (!items || items.length === 0 || !prevBtn || !nextBtn) return;
 
             const totalItems = items.length;
             let currentIndex = 0;
 
             function updateDeckState(direction = 'next') {
-                // Limpa todas as classes de estado
                 items.forEach((item, i) => {
                     item.classList.remove(
                         'is-active-stack', 
@@ -2447,23 +2531,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 const activeIndex = (currentIndex % totalItems + totalItems) % totalItems;
                 const nextIndex1 = (activeIndex + 1) % totalItems;
                 const nextIndex2 = (activeIndex + 2) % totalItems;
-                const prevIndex = (currentIndex - 1 + totalItems) % totalItems; // Para onde o card "saindo" vai
+                const prevIndex = (currentIndex - 1 + totalItems) % totalItems; 
 
-                // Aplica as novas classes
                 items[activeIndex].classList.add('is-active-stack');
                 items[nextIndex1].classList.add('is-next-stack-1');
                 items[nextIndex2].classList.add('is-next-stack-2');
                 
-                // Aplica classes de transição (exiting/returning)
                 if (direction === 'next') {
                     items[prevIndex].classList.add('is-exiting-stack');
                 } else if (direction === 'prev') {
-                    // O item que *era* o ativo (agora é o next-1) precisa animar de volta
                     items[nextIndex1].classList.add('is-returning-stack');
                 }
             }
 
-            // Controles
             nextBtn.addEventListener('click', () => {
                 currentIndex++;
                 updateDeckState('next');
@@ -2474,13 +2554,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateDeckState('prev');
             });
 
-            // Inicializa
-            updateDeckState(null); // Define o estado inicial sem animação de saída
+            updateDeckState(null); 
         }
 
-        // Chama a nova função
-        initDeckCarousel();
+        initDeckCarousel(); // Chama a função
+
+      }); // --- FIM DO LISTENER GLOBAL ---
     </script>
-    
 </body>
 </html>
