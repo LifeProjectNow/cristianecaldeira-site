@@ -1234,7 +1234,7 @@
 
       
 
-/* === INÍCIO - HERO (V5.0 - SOLUÇÃO FINAL) === */
+/* === INÍCIO - HERO (V6.0 - SOLUÇÃO FINAL COM CAMADAS) === */
       #hero {
         position: relative;
         min-height: 90vh; 
@@ -1261,12 +1261,12 @@
         display: block; 
       }
 
-      /* Oculta a imagem da Dra. no desktop (ela já está no fundo) */
+      /* OCULTA a <img> da Dra. no desktop (ela já está no fundo) */
       .hero-image-wrapper.mobile-only-image {
           display: none; 
       }
       
-      /* Garantir que TODO texto do Hero seja claro no desktop (para o fundo escuro) */
+      /* Texto do Hero (Claro, para o fundo escuro) */
       #hero h1, 
       #hero p.subheadline,
       #hero li,
@@ -1338,42 +1338,42 @@
       
       #hero small {
         margin-top: var(--spacing-sm);
-        opacity: 0.8; /* Apenas para diferenciar do parágrafo */
+        opacity: 0.8; 
       }
       
       /* --- MOBILE: O GRANDE TRABALHO ACONTECE AQUI --- */
       @media (max-width: 991px) {
           #hero {
-              /* === MOBILE: SEU NOVO FUNDO VERTICAL (1080x1920) === */
-              background-image: url('[COLE_AQUI_O_LINK_DO_FUNDO_MOBILE_1080x1920]');
+              /* === SEU NOVO FUNDO MOBILE (1080x1920) === */
+              background-image: url('https://i.ibb.co/SDJV2J66/FUNDO.webp');
               background-size: cover;
               background-position: top center;
-              padding-top: 80px; /* Ajuste para o header no mobile */
+              padding-top: 80px; 
           }
 
-          /* Reativa o grid no mobile para empilhar texto e imagem da Dra. */
+          /* Reativa o grid no mobile para empilhar texto e imagem */
           #hero .hero-container {
               display: grid; 
               grid-template-columns: 1fr; /* Empilhado */
-              gap: var(--spacing-xl); /* ESPAÇO entre o CTA e a imagem da Dra. */
+              gap: var(--spacing-xl); /* ESPAÇO entre o CTA e a imagem */
           }
 
-          /* Mostra a imagem da Dra. no mobile */
+          /* MOSTRA a <img> da Dra. no mobile */
           .hero-image-wrapper.mobile-only-image {
-              display: block; /* Volta a exibir */
+              display: block; 
               width: 100%;
-              max-width: 450px; /* Limita o tamanho */
-              margin: 0 auto; /* Centraliza */
+              margin: 0; /* Remove a centralização */
               z-index: 5; /* Garante que ela fique por cima do fundo */
           }
           .hero-image-wrapper.mobile-only-image img {
-              width: 100%;
+              width: 100%; /* Encostada na margem */
               height: auto;
               object-fit: cover;
-              border-radius: 12px;
-              box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+              /* Remove o "mockup" */
+              border-radius: 0;
+              box-shadow: none;
           }
-
+          
           /* O texto do Hero continua sendo claro para o novo fundo mobile */
           #hero h1, 
           #hero p.subheadline,
@@ -1387,7 +1387,7 @@
              color: var(--c-text-light); /* Checkmark claro */
           }
       }
-      /* === FIM - HERO (V5.0) === */
+      /* === FIM - HERO (V6.0) === */
       
 
       /* Problema */
@@ -3443,6 +3443,7 @@
                rel="noopener">
                 INICIAR MEU DIAGNÓSTICO PERSONALIZADO
             </a>
+            
         </div>
 
         <div class="hero-image-wrapper mobile-only-image reveal-on-scroll" style="--delay: 200ms;">
