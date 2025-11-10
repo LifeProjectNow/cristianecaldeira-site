@@ -1391,30 +1391,17 @@
       /* === FIM - HERO (V6.0) === */
       
 
-      /* Problema */
-
+/* Problema */
       #problema {
-
          border-top: 1px solid var(--c-border);
-
       }
-
       #problema p {
-
-        font-size: 1.25rem;
-
-        line-height: 1.7;
-
+        /* MUDANÇA: Removido font-size, line-height, e font-weight */
+        /* Agora ele vai herdar o estilo do body (17px, 1.7), igual ao parágrafo da Linha Charlotte */
         max-width: 700px;
-
         text-align: center;
-
         margin: 0 auto;
-
-        color: var(--c-text);
-
-        font-weight: 500;
-
+        color: var(--c-text-body); 
       }
 
       
@@ -1501,10 +1488,8 @@
 
       }
 
-      #maestria .elegant-divider {
-
-          background-color: var(--c-primary); /* DIRETRIZ 7: Harmonia */
-
+#maestria .elegant-divider {
+          background-color: var(--c-text-light); /* MUDANÇA: Linha branca */
       }
 
       
@@ -1539,8 +1524,7 @@
 
           padding-bottom: var(--spacing-sm);
 
-          border-bottom: 1px solid var(--c-primary); /* DIRETRIZ 7: Harmonia */
-
+          border-bottom: 1px solid var(--c-text-light); /* MUDANÇA: Linha branca */
       }
 
       .maestria-texto h4:first-of-type { margin-top: 0; }
@@ -3357,7 +3341,65 @@
 
       /* === FIM - CSS do Rodapé e Modais Legais === */
 
+/* === INÍCIO - GATILHOS DE PERSUASÃO (WIDGETS) === */
+      #fomo-widget, #geo-widget {
+          position: fixed;
+          left: var(--spacing-md);
+          z-index: 997;
+          /* Efeito Translúcido */
+          background-color: rgba(0,0,0,0.7);
+          backdrop-filter: blur(5px);
+          -webkit-backdrop-filter: blur(5px);
+          color: var(--c-text-light);
+          padding: var(--spacing-sm) var(--spacing-md);
+          border-radius: 6px;
+          font-size: 0.85rem;
+          font-weight: 500;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+          transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+      }
       
+      /* CORREÇÃO: A opacidade 0 agora se aplica SÓ ao fomo-widget */
+      #fomo-widget {
+          bottom: var(--spacing-md);
+          opacity: 0; /* Começa escondido para o timer do JS */
+      }
+
+      .fomo-dot {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          background-color: #25D366;
+          border-radius: 50%;
+          margin-right: var(--spacing-sm);
+          animation: pulse 1.5s infinite ease-in-out;
+      }
+
+      /* O geo-widget agora começa visível (mas é escondido pela classe .geo-hidden) */
+      #geo-widget {
+          bottom: 70px; /* Acima do fomo-widget */
+      }
+
+      .geo-hidden {
+          opacity: 0;
+          transform: translateY(10px);
+          pointer-events: none;
+      }
+      @keyframes pulse {
+          0% { transform: scale(1); opacity: 0.7; }
+          50% { transform: scale(1.1); opacity: 1; }
+          100% { transform: scale(1); opacity: 0.7; }
+      }
+      /* Ajuste para não colidir com o Wpp no Mobile */
+      @media (max-width: 767px) {
+          #fomo-widget {
+              bottom: 85px; /* Acima do Wpp flutuante */
+          }
+          #geo-widget {
+              bottom: 135px;
+          }
+      }
+      /* === FIM - GATILHOS DE PERSUASÃO === */
 
     </style>
 
@@ -3464,7 +3506,7 @@
 
                 <p class="reveal-on-scroll" style="--delay: 100ms; font-size: 1.25rem; font-weight: 500; color: var(--c-text);">
 
-                    Você é a mulher que resolve. A que cuida de tudo e de todos (da família à equipe). Forte. Respeitada. Mas a imagem que a câmera reflete não mente: a flacidez apareceu. O "bigode chinês" está mais fundo. O "bumbum" parece "murcho". Você se sente insegura, invisível, e com **raiva** por sua imagem não acompanhar mais sua performance, como você realmente gostaria de estar...
+                    Você é a mulher que resolve! A que cuida de tudo e de todos (da família à equipe)... Forte, respeitada mas, a imagem que a câmera reflete não mente: a flacidez apareceu, o "bigode chinês" está mais fundo, o "bumbum" parece "murcho". Você se sente insegura, invisível, e com **raiva** por sua imagem não acompanhar mais sua performance, como você realmente gostaria de estar...
 
                 </p>
 
@@ -3544,13 +3586,13 @@
 
                 <h4>Expertise Global (A Técnica Russa)</h4>
 
-                <p>Além de 80+ especializações nacionais, ela buscou conhecimento na fonte, trazendo da Rússia (considerada a melhor do mundo) as técnicas de rejuvenescimento mais avançadas do planeta.</p>
+                <p>Além de MAIS DE 80 ESPECIALIZAÇÕES NACIONAIS, ela buscou conhecimento na fonte, trazendo da RÚSSIA (considerada A MELHOR DO MUNDO) as Técnicas de Rejuvenescimento Mais Avançadas do Planeta!</p>
 
                 
 
                 <h4>Inovação Própria (Resultados em 1 Sessão)</h4>
 
-                <p>Ela desenvolveu protocolos exclusivos "5 em 1" que entregam a transformação visível que prometemos, já na primeira sessão.</p>
+                <p>Ela desenvolveu protocolos exclusivos "5 em 1" que entregam a transformação visível que prometemos, já na Primeira Sessão.</p>
 
                 
 
@@ -3562,7 +3604,7 @@
 
                 <h4>A Abordagem 360° (O Fim do "Efeito Sanfona")</h4>
 
-                <p>Esta não é uma clínica de estética comum. Temos uma parceria exclusiva com médicos para protocols como Mounjaro e psiquiatras especializados em compulsão alimentar. Nós não tratamos apenas o sintoma (a gordura); nós tratamos a causa.</p>
+                <p>Esta não é uma clínica de estética comum. Temos uma parceria exclusiva com médicos para protocols como Mounjaro e psiquiatras especializados em compulsão alimentar. Nós não tratamos apenas o sintoma (a gordura); nós Tratamos A Causa!</p>
 
                 
 
@@ -3692,29 +3734,29 @@
 
                 <ul class="carousel-track">
 
-                    <li class="carousel-slide"><img src="https://via.placeholder.com/600x600/F7F4F1/4A3F37?text=Charlotte+1" alt="Produto Linha Charlotte 1" loading="lazy"></li>
+                    <li class="carousel-slide"><img src="https://i.ibb.co/0p28hrrB/3.webp" alt="Produto Linha Charlotte 1" loading="lazy"></li>
 
-                    <li class="carousel-slide"><img src="https://via.placeholder.com/600x600/F7F4F1/4A3F37?text=Charlotte+2" alt="Produto Linha Charlotte 2" loading="lazy"></li>
+                    <li class="carousel-slide"><img src="https://i.ibb.co/x8m0M5fr/1.webp" alt="Produto Linha Charlotte 2" loading="lazy"></li>
 
-                    <li class="carousel-slide"><img src="https://via.placeholder.com/600x600/F7F4F1/4A3F37?text=Charlotte+3" alt="Produto Linha Charlotte 3" loading="lazy"></li>
+                    <li class="carousel-slide"><img src="https://i.ibb.co/fdyyHSB7/2.webp" alt="Produto Linha Charlotte 3" loading="lazy"></li>
 
-                    <li class="carousel-slide"><img src="https://via.placeholder.com/600x600/F7F4F1/4A3F37?text=Charlotte+4" alt="Produto Linha Charlotte 4" loading="lazy"></li>
+                    <li class="carousel-slide"><img src="https://i.ibb.co/cc03w1Xc/4.webp" alt="Produto Linha Charlotte 4" loading="lazy"></li>
 
-                    <li class="carousel-slide"><img src="https://via.placeholder.com/600x600/F7F4F1/4A3F37?text=Charlotte+5" alt="Produto Linha Charlotte 5" loading="lazy"></li>
+                    <li class="carousel-slide"><img src="https://i.ibb.co/Wvf8MZBJ/5.webp" alt="Produto Linha Charlotte 5" loading="lazy"></li>
 
-                    <li class="carousel-slide"><img src="https://via.placeholder.com/600x600/F7F4F1/4A3F37?text=Charlotte+6" alt="Produto Linha Charlotte 6" loading="lazy"></li>
+                    <li class="carousel-slide"><img src="https://i.ibb.co/G4TLTHRS/6.webp" alt="Produto Linha Charlotte 6" loading="lazy"></li>
 
-                    <li class="carousel-slide"><img src="https://via.placeholder.com/600x600/F7F4F1/4A3F37?text=Charlotte+7" alt="Produto Linha Charlotte 7" loading="lazy"></li>
+                    <li class="carousel-slide"><img src="https://i.ibb.co/fVMBk420/7.webp" alt="Produto Linha Charlotte 7" loading="lazy"></li>
 
-                    <li class="carousel-slide"><img src="https://via.placeholder.com/600x600/F7F4F1/4A3F37?text=Charlotte+8" alt="Produto Linha Charlotte 8" loading="lazy"></li>
+                    <li class="carousel-slide"><img src="https://i.ibb.co/7xFygC2x/8.webp" alt="Produto Linha Charlotte 8" loading="lazy"></li>
 
-                    <li class="carousel-slide"><img src="https://via.placeholder.com/600x600/F7F4F1/4A3F37?text=Charlotte+9" alt="Produto Linha Charlotte 9" loading="lazy"></li>
+                    <li class="carousel-slide"><img src="https://i.ibb.co/gZ97DDLr/9.webp" alt="Produto Linha Charlotte 9" loading="lazy"></li>
 
-                    <li class="carousel-slide"><img src="https://via.placeholder.com/600x600/F7F4F1/4A3F37?text=Charlotte+10" alt="Produto Linha Charlotte 10" loading="lazy"></li>
+                    <li class="carousel-slide"><img src="https://i.ibb.co/5Wv89sWG/10.webp" alt="Produto Linha Charlotte 10" loading="lazy"></li>
 
-                    <li class="carousel-slide"><img src="https://via.placeholder.com/600x600/F7F4F1/4A3F37?text=Charlotte+11" alt="Produto Linha Charlotte 11" loading="lazy"></li>
+                    <li class="carousel-slide"><img src="https://i.ibb.co/nNmsNKVj/11.webp" alt="Produto Linha Charlotte 11" loading="lazy"></li>
 
-                    <li class="carousel-slide"><img src="https://via.placeholder.com/600x600/F7F4F1/4A3F37?text=Charlotte+12" alt="Produto Linha Charlotte 12" loading="lazy"></li>
+                    <li class="carousel-slide"><img src="https://i.ibb.co/s9NGcT4x/12.webp" alt="Produto Linha Charlotte 12" loading="lazy"></li>
 
                 </ul>
 
@@ -3866,25 +3908,25 @@
 
             <div class="container">
 
-                <h2 class="reveal-on-scroll">Você construiria uma casa de sem uma planta? Por que trataria um único ponto ou seu corpo sem um mapa?</h2>
+                <h2 class="reveal-on-scroll">Você construiria uma Casa de Sem uma Planta, Um Projeto? Por que trataria um único ponto ou seu corpo sem um mapa?</h2>
 
-                <p class="subheadline reveal-on-scroll" style="--delay: 100ms;">Sua transformação não começa com um "achismo". Começa com um diagnóstico preciso.</p>
+                <p class="subheadline reveal-on-scroll" style="--delay: 100ms;">Sua Transformação não começa com um "achismo". Começa com um Diagnóstico Preciso.</p>
 
                 <p class="reveal-on-scroll" style="--delay: 200ms;">Enquanto o mercado comum foca em "aplicações", nós focamos na **Arquitetura** da sua pele. Entregamos um Plano de Transformação Completo! O "Diagnóstico Personalizado Para Sua Necessidade e Desejo + Protocolo de Rejuvenescimento Total 5 em 1" é a sua porta de entrada para a verdadeira Estética de Alta Performance.</p>
 
                 
 
-                <p class="reveal-on-scroll" style="--delay: 250ms;"><strong>Nesta Consultoria Exclusiva de 1 hora 30 minutos com a Dra. Cristiane, vamos:</strong></p>
+                <p class="reveal-on-scroll" style="--delay: 250ms;"><strong>Nesta Consultoria Exclusiva de 1 hora 30 minutos com a Arquiteta da Beleza (Dra. Cristiane), vamos:</strong></p>
 
                 <ul class="reveal-on-scroll" style="--delay: 300ms;">
 
-                    <li>Mapear sua toda sua estrutura (a "planta").</li>
+                    <li>Mapear sua toda sua estrutura (a "Planta");</li>
 
-                    <li>Identificar a causa exata da sua flacidez (o "terreno").</li>
+                    <li>Identificar a causa exata da sua queixa (o "Terreno");</li>
 
-                    <li>Desenhar seu plano de tratamento individualizado (o "projeto").</li>
+                    <li>Desenhar seu Plano de Tratamento Individualizado (o "Projeto");</li>
 
-                    <li>Executar o Protocolo Glow Imediato para você já sair com a pele radiante (a "primeira vitória").</li>
+                    <li>Executar o Protocolo Personalizado para você já sair radiante na primeira Sessão! (a "Primeira Vitória")!</li>
 
                 </ul>
 
@@ -4034,16 +4076,13 @@
 
                         <ul class="card-carousel-track">
 
-                            <li><img src="https://via.placeholder.com/400x400/A7958C/332223?text=Facial+1" alt="Resultado Flacidez Facial 1" loading="lazy" width="400" height="400"></li>
+                            <li><img src="https://i.ibb.co/MkWggmGW/2.jpg" alt="Resultado Flacidez Facial 1" loading="lazy" width="400" height="400"></li>
 
-                            <li><img src="https://via.placeholder.com/400x400/A7958C/332223?text=Facial+2" alt="Resultado Flacidez Facial 2" loading="lazy" width="400" height="400"></li>
+                            <li><img src="https://i.ibb.co/HWHLsDN/3.jpg" alt="Resultado Flacidez Facial 2" loading="lazy" width="400" height="400"></li>
 
-                            <li><img src="https://via.placeholder.com/400x400/A7958C/332223?text=Facial+3" alt="Resultado Flacidez Facial 3" loading="lazy" width="400" height="400"></li>
+                            <li><img src="https://i.ibb.co/HfbJ7QMs/4.jpg" alt="Resultado Flacidez Facial 3" loading="lazy" width="400" height="400"></li>
 
-                            <li><img src="https://via.placeholder.com/400x400/A7958C/332223?text=Facial+4" alt="Resultado Flacidez Facial 4" loading="lazy" width="400" height="400"></li>
-
-                            <li><img src="https://via.placeholder.com/400x400/A7958C/332223?text=Facial+5" alt="Resultado Flacidez Facial 5" loading="lazy" width="400" height="400"></li>
-
+                            <li><img src="https://i.ibb.co/9fMZ27b/5.jpg" alt="Resultado Flacidez Facial 4" loading="lazy" width="400" height="400"></li>
                         </ul>
 
                     </div>
@@ -4138,7 +4177,7 @@
                     <div id="faq-a-2" class="faq-answer" role="region">
                         <div class="faq-answer-content">
                             <p><strong>Não. Além de nossa clínica principal em Sertãozinho, a Dra. Cristiane também atende em Ribeirão Preto.</strong></p>
-                            <p>Oferecemos a mesma excelência em Estética de Alta Performance no <strong>Espaço ALLURE BEAUTY & HAIR By Alexandre Lima</strong>, localizado na Rua: São José, 2467, Alto da Boa Vista, Zona Sul em Ribeirão Preto. É a sua oportunidade de ter acesso aos nossos protocolos exclusivos também em Ribeirão.</p>
+                            <p>Oferecemos a mesma excelência em Estética de Alta Performance no <strong>Espaço ALLURE BEAUTY & HAIR By Alexandre Lima</strong>, localizado na <strong>Rua: São José, 2467, Alto da Boa Vista, Zona Sul em Ribeirão Preto-SP</strong>. É a sua oportunidade de ter acesso aos nossos protocolos exclusivos também em Ribeirão!</p>
                         </div>
                     </div>
                 </div>
@@ -4163,14 +4202,14 @@
             <div class="faq-item">
                 <h3>
                     <button class="faq-question" aria-expanded="false" aria-controls="faq-a-4">
-                        Nosso valor (não preço) está no Plano Personalizado, não na "seringa"!
+                        Não vendemos "aplicações"... Nós entregamos "Arquitetura" Personalizada!
                     </button>
                 </h3>
                 <div class="faq-answer-wrapper">
                     <div id="faq-a-4" class="faq-answer" role="region">
                         <div class="faq-answer-content">
                             <p>"Qual o valor?"</p>
-                            <p>Não vendemos 'ml' ou 'seringas' padronizadas, pois cada rosto e corpo é único. O valor do seu protocolo completo será definido no Diagnóstico Personalizado, baseado exatamente no que você precisa. O primeiro passo é o Diagnóstico. Clique abaixo para saber mais informações sobre a Consultoria com a Dra. Cristiane!</p>
+                            <p>O mercado comum precifica por "aplicação" (como 'ml' ou 'seringa')... Nós não! Nosso valor está na **Arquitetura** da sua transformação. Cada plano é 100% único, focado em *reconstruir* sua estrutura. O valor do seu protocolo completo será definido no Diagnóstico Personalizado, onde desenharemos o "Mapa da Restauração" (a 'planta') da sua pele. O primeiro passo é o Diagnóstico.</p>
                         </div>
                     </div>
                 </div>
@@ -4300,7 +4339,7 @@
 
                 <h2 class="reveal-on-scroll">A Agenda da Dra. Cristiane Caldeira é Exclusiva:</h2>
 
-                <p class="reveal-on-scroll" style="--delay: 100ms;">O único risco é continuar se sentindo "insegura" toda vez que abre a câmera do celular.</p>
+                <p class="reveal-on-scroll" style="--delay: 100ms;">O único risco é continuar se olhando no espelho e <strong>sentindo que não é mais você</strong>!</p>
 
                 
 
@@ -4410,18 +4449,14 @@
 
     
 
-    <div id="fomo-widget" class="persuasion-widget" role="status" aria-live="polite">
-
-        <span class="fomo-dot"></span> <strong><span id="fomo-count">92</span> pessoas acessando agora...</strong>
-
+<div id="fomo-widget" aria-live="polite" style="opacity: 0;">
+        <span class="fomo-dot"></span>
+        <span id="fomo-count">92</span>
+        <span class="fomo-text">&nbsp;pessoas acessando agora...</span>
     </div>
-
-    <div id="geo-widget" class="persuasion-widget geo-hidden" role="status" aria-live="polite">
-
-        </div>
-
+    <div id="geo-widget" class="geo-hidden" aria-live="polite"></div>
+    
     <script>
-
       document.addEventListener("DOMContentLoaded", () => {
 
         
@@ -4522,11 +4557,11 @@
 
           } else if (currentHour >= 18 && currentHour < 24) { // Noite
 
-              text = "Cuidou de tudo e de todos? Agora, finalmente, cuide de você. Não termine o dia frustrada com sua imagem. Restaure sua Melhor Versão!";
+              text = "Cuidou de tudo e de todos? Agora, finalmente, cuide de você! Não termine o dia frustrada com sua imagem... Restaure sua Melhor Versão!";
 
           } else { // Madrugada
 
-              text = "Acordada? Se é a frustração com sua imagem (rosto, corpo ou pele) que tira seu sono, use esta insônia para agir... Restaure sua paz a partir de agora!";
+              text = "Acordada? Se é a frustração com sua imagem (rosto, corpo ou pele) que tira seu sono, use isso para agir... Restaure sua paz a partir de agora!";
 
           }
 
@@ -5128,86 +5163,80 @@
 
 
 
-        // --- 13. Gatilho de Persuasão (FOMO - Pessoas Online) (ÉPICO 3.2) ---
-
+// --- 13. Gatilho de Persuasão (FOMO - Delay de 5s) ---
         try {
+            setTimeout(() => {
+                let fomoCount = 92;
+                const fomoEl = document.getElementById('fomo-count');
+                if (fomoEl) {
+                    document.getElementById('fomo-widget').style.opacity = '1'; // Faz ele aparecer
+                    setInterval(() => {
+                        fomoCount += Math.floor(Math.random() * 3) + 1; // Soma 1, 2 ou 3
+                        
+                        // Atualiza apenas o número. O espaço já está no HTML.
+                        fomoEl.innerText = fomoCount; 
 
-            let fomoCount = 92;
-
-            const fomoEl = document.getElementById('fomo-count');
-
-            if (fomoEl) {
-
-                setInterval(() => {
-
-                    fomoCount += Math.floor(Math.random() * 3) + 1; 
-
-                    fomoEl.innerText = fomoCount;
-
-                }, 7500 + Math.random() * 3000); // Intervalo aleatório
-
-            }
-
+                    }, 7500 + Math.random() * 3000); // Intervalo aleatório
+                }
+            }, 5000); // 5000ms = 5 segundos de delay
         } catch(e) { console.warn("Erro no widget FOMO:", e); }
 
-
-
-        // --- 14. Gatilho de Persuasão (Geo-IP "Fake-Door") (ÉPICO 3.2) ---
-
+// --- 14. Gatilho de Persuasão (Geo-IP - CORRIGIDO COM CONCORDÂNCIA) ---
         try {
-
-            const cities = ['Pontal', 'Ribeirão Preto', 'Jardinópolis', 'Jaboticabal', 'Pitangueiras', 'Barrinha', 'Dumont', 'Cravinhos', 'Batatais', 'Serrana'];
-
-            const actions = ['acabou de entrar em contato.', 'agendou seu Diagnóstico.', 'marcou sua consultoria.', 'iniciou seu protocolo.'];
-
-            const widget = document.getElementById('geo-widget');
-
+            const cities = ['Sertãozinho', 'Pontal', 'Ribeirão Preto', 'Jardinópolis', 'Jaboticabal', 'Pitangueiras', 'Barrinha', 'Dumont', 'Cravinhos', 'Batatais', 'Serrana', 'Serra Azul'];
             
+            // MUDANÇA: Ações agora têm singular e plural
+            const actions = [
+                { singular: 'acabou de entrar em contato.', plural: 'acabaram de entrar em contato...' }, 
+                { singular: 'agendou seu Diagnóstico.', plural: 'agendaram seu Diagnóstico.' }, 
+                { singular: 'marcou sua Consultoria Exclusiva.', plural: 'marcaram sua Consultoria Exclusiva.' }, 
+                { singular: 'iniciou seu Protocolo.', plural: 'iniciaram seu Protocolo.' }
+            ];
+            
+            const widget = document.getElementById('geo-widget');
+            const triggerSection = document.getElementById('arsenal'); // O PONTO DE DISPARO
+            let geoLoopStarted = false; // Flag para disparar só uma vez
 
-            if (widget) {
-
-                const showGeoWidget = () => {
-
-                    const city = cities[Math.floor(Math.random() * cities.length)];
-
-                    const action = actions[Math.floor(Math.random() * actions.length)];
-
-                    const people = Math.floor(Math.random() * 3) + 2; // 2, 3 ou 4
-
-                    
-
-                    widget.innerText = `${people} pessoas de ${city} ${action}`;
-
-                    widget.classList.remove('geo-hidden');
-
-                    
-
-                    // Mostra a mensagem por 5 segundos, depois esconde
-
-                    setTimeout(() => {
-
-                        widget.classList.add('geo-hidden');
-
-                    }, 5000);
-
-                };
-
+            const showGeoWidget = () => {
+                const city = cities[Math.floor(Math.random() * cities.length)];
+                const actionObj = actions[Math.floor(Math.random() * actions.length)]; // Pega o objeto (singular/plural)
                 
-
-                // Mostra o primeiro após 6s, depois o loop
-
+                // MUDANÇA: Agora pode gerar "1" (para o singular)
+                const people = Math.floor(Math.random() * 4) + 1; // Gera 1, 2, 3, ou 4
+                
+                let message = "";
+                
+                // MUDANÇA: Lógica de concordância
+                if (people === 1) {
+                    message = `1 pessoa de ${city} ${actionObj.singular}`;
+                } else {
+                    message = `${people} pessoas de ${city} ${actionObj.plural}`;
+                }
+                
+                widget.innerText = message;
+                widget.classList.remove('geo-hidden');
+                
                 setTimeout(() => {
+                    widget.classList.add('geo-hidden');
+                }, 5000); // Tempo que a mensagem fica na tela
+            };
 
-                    showGeoWidget();
+            if (widget && triggerSection) {
+                const geoObserver = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting && !geoLoopStarted) {
+                        geoLoopStarted = true; // Impede de disparar de novo
+                        
+                        // Dispara o primeiro popup, e DEPOIS inicia o loop
+                        showGeoWidget(); 
+                        setInterval(showGeoWidget, 12000); // Mostra uma nova a cada 12 segundos
+                        
+                        geoObserver.disconnect(); // Para de observar
+                    }
+                }, { threshold: 0.1 }); // Dispara quando 10% do #arsenal aparecer
 
-                    setInterval(showGeoWidget, 12000); // Mostra uma nova a cada 12 segundos
-
-                }, 6000);
-
+                geoObserver.observe(triggerSection);
             }
-
         } catch(e) { console.warn("Erro no widget Geo-IP:", e); }
-
        });
 
     // --- FIM DO LISTENER GLOBAL ---
