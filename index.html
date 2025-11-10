@@ -824,7 +824,7 @@
 
         z-index: 999;
 
-        padding: 0 0 var(--spacing-sm); /* ZERA o topo, mantém o de baixo */
+        padding: 0 0 var(--spacing-md); /* ZERA o topo, mantém o de baixo */
 
         transition: top var(--transition-fast), background-color 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
 
@@ -1234,214 +1234,160 @@
 
       
 
-      /* === INÍCIO - HERO COM NOVA "JOGADA DE COR" === */
-
+/* === INÍCIO - HERO (V5.0 - SOLUÇÃO FINAL) === */
       #hero {
-
         position: relative;
-
         min-height: 90vh; 
-
         padding: var(--spacing-xxl) 0;
-
-        padding-top: 80px; 
-
+        padding-top: 140px; /* Ajuste para o header */
         display: flex;
-
         align-items: center;
-
         overflow: hidden;
-
-        color: var(--c-text-light); /* MUDANÇA: Texto claro */
-
         
-
-        /* DIRETRIZ 1: Imagem de Fundo Implementada */
-
-        background-image: url('[COLE_O_LINK_DA_IMAGEM_DE_DESKTOP_AQUI]');
-
+        /* === DESKTOP: SEU FUNDO ORIGINAL (1920x1080) === */
+        background-image: url('https://i.ibb.co/VFZxPSV/capa-primeiro-bloco.webp');
         background-size: cover;
-
         background-position: center center;
-
       }
-
       
-
       #hero::before {
-
-        display: none; /* Overlay removido */
-
+        display: none; 
       }
-
       
-
-      #hero .container {
-
+      #hero .hero-container {
         position: relative;
-
         z-index: 2;
-
+        /* No desktop, não precisa de grid, o fundo já tem a Dra. */
+        display: block; 
       }
 
+      /* Oculta a imagem da Dra. no desktop (ela já está no fundo) */
+      .hero-image-wrapper.mobile-only-image {
+          display: none; 
+      }
       
-
+      /* Garantir que TODO texto do Hero seja claro no desktop (para o fundo escuro) */
       #hero h1, 
-
       #hero p.subheadline,
-
-      #hero li {
-
-        color: var(--c-text-light); /* MUDANÇA: Texto claro */
-
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* Sombra sutil para legibilidade */
-
-        text-align: left;
-
-      }
-
-      
-
-      /* Efeito de Duas Fontes no H1 */
-
-      #hero h1 {
-
-        font-family: var(--font-main);
-
-        font-weight: 700;
-
-        text-transform: uppercase;
-
-        font-size: clamp(1.8rem, 7vw, 3.8rem); /* DIRETRIZ 2: Refatorado */
-
-        text-align: left;
-
-        max-width: 600px; /* Ajustado */
-
-        margin-left: 0;
-
-        line-height: 1.2;
-
-      }
-
-      #hero h1 em {
-
-          font-family: var(--font-heading);
-
-          font-style: italic;
-
-          font-weight: 700;
-
-          text-transform: none;
-
-          display: block; /* Quebra a linha */
-
-      }
-
-      
-
-      #hero p.subheadline {
-
-          margin-left: 0;
-
-          max-width: 500px;
-
-          color: var(--c-text-light); /* Tom de corpo para subheadline */
-
-      }
-
-      
-
-      .hero-checklist {
-
-        list-style: none;
-
-        margin: var(--spacing-lg) 0;
-
-        padding: 0;
-
-        display: flex;
-
-        flex-direction: column;
-
-        gap: var(--spacing-md); 
-
-        width: 100%;
-
-        max-width: 500px;
-
-      }
-
-      .hero-checklist li {
-
-        font-size: 1.1rem;
-
-        font-weight: 500;
-
-        position: relative;
-
-        padding-left: 30px;
-
-      }
-
-      .hero-checklist li::before {
-
-        content: '✓';
-
-        position: absolute;
-
-        left: 0;
-
-        top: 2px;
-
-        font-weight: 700;
-
-        color: var(--c-primary); /* MUDANÇA: Checkmark marrom */
-
-      }
-
-      
-
-      #hero .cta-hero {
-
-        margin-top: var(--spacing-sm);
-
-        max-width: 450px; /* MUDANÇA: Consistência de Dimensão */
-
-        /* MUDANÇA: Botão principal marrom */
-
-        background-color: var(--c-primary);
-
-        color: var(--c-text-light);
-
-        border-color: var(--c-primary);
-
-      }
-
-      #hero .cta-hero:hover {
-
-        background-color: var(--c-primary-dark);
-
-        border-color: var(--c-primary-dark);
-
-        color: var(--c-text-light);
-
-      }
-
-      
-
+      #hero li,
       #hero small {
-
-        margin-top: var(--spacing-sm);
-
-        color: var(--c-text-body);
-
+        color: var(--c-text-light); 
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.2); 
+        text-align: left;
       }
-
       
+      #hero h1 {
+        font-family: var(--font-main);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: clamp(1.8rem, 7vw, 3.8rem);
+        max-width: 600px;
+        margin-left: 0;
+        line-height: 1.2;
+      }
+      #hero h1 em {
+          font-family: var(--font-heading);
+          font-style: italic;
+          font-weight: 700;
+          text-transform: none;
+          display: block; 
+      }
+      
+      #hero p.subheadline {
+          margin-left: 0;
+          max-width: 500px;
+      }
+      
+      .hero-checklist {
+        list-style: none;
+        margin: var(--spacing-lg) 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md); 
+        width: 100%;
+        max-width: 500px;
+      }
+      .hero-checklist li {
+        font-size: 1.1rem;
+        font-weight: 500;
+        position: relative;
+        padding-left: 30px;
+      }
+      .hero-checklist li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        top: 2px;
+        font-weight: 700;
+        color: var(--c-text-light); /* Checkmark claro para contrastar */
+      }
+      
+      #hero .cta-hero {
+        margin-top: var(--spacing-sm);
+        max-width: 450px; 
+        background-color: var(--c-primary);
+        color: var(--c-text-light);
+        border-color: var(--c-primary);
+      }
+      #hero .cta-hero:hover {
+        background-color: var(--c-primary-dark);
+        border-color: var(--c-primary-dark);
+        color: var(--c-text-light);
+      }
+      
+      #hero small {
+        margin-top: var(--spacing-sm);
+        opacity: 0.8; /* Apenas para diferenciar do parágrafo */
+      }
+      
+      /* --- MOBILE: O GRANDE TRABALHO ACONTECE AQUI --- */
+      @media (max-width: 991px) {
+          #hero {
+              /* === MOBILE: SEU NOVO FUNDO VERTICAL (1080x1920) === */
+              background-image: url('[COLE_AQUI_O_LINK_DO_FUNDO_MOBILE_1080x1920]');
+              background-size: cover;
+              background-position: top center;
+              padding-top: 80px; /* Ajuste para o header no mobile */
+          }
 
-      /* === FIM - HERO COM NOVA "JOGADA DE COR" === */
+          /* Reativa o grid no mobile para empilhar texto e imagem da Dra. */
+          #hero .hero-container {
+              display: grid; 
+              grid-template-columns: 1fr; /* Empilhado */
+              gap: var(--spacing-xl); /* ESPAÇO entre o CTA e a imagem da Dra. */
+          }
 
+          /* Mostra a imagem da Dra. no mobile */
+          .hero-image-wrapper.mobile-only-image {
+              display: block; /* Volta a exibir */
+              width: 100%;
+              max-width: 450px; /* Limita o tamanho */
+              margin: 0 auto; /* Centraliza */
+              z-index: 5; /* Garante que ela fique por cima do fundo */
+          }
+          .hero-image-wrapper.mobile-only-image img {
+              width: 100%;
+              height: auto;
+              object-fit: cover;
+              border-radius: 12px;
+              box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+          }
+
+          /* O texto do Hero continua sendo claro para o novo fundo mobile */
+          #hero h1, 
+          #hero p.subheadline,
+          #hero li,
+          #hero small {
+              color: var(--c-text-light); 
+              text-shadow: 1px 1px 3px rgba(0,0,0,0.2); 
+          }
+          
+          #hero .hero-checklist li::before {
+             color: var(--c-text-light); /* Checkmark claro */
+          }
+      }
+      /* === FIM - HERO (V5.0) === */
       
 
       /* Problema */
@@ -3476,53 +3422,35 @@
 
 
 
-        <section id="hero">
+<section id="hero">
+    <div class="container hero-container">
 
-            <div class="container">
+        <div class="hero-content">
+            <h1 class="reveal-on-scroll" style="font-size: clamp(1.8rem, 7vw, 3.8rem); text-align: left; max-width: 600px; margin-left: 0; line-height: 1.2;">Você também foge das fotos? <em>Ou, Pior: se olha no espelho e sente que não é mais você?</em></h1>
 
-                
-
-                <h1 class="reveal-on-scroll" style="font-size: clamp(1.8rem, 7vw, 3.8rem); text-align: left; max-width: 600px; margin-left: 0; line-height: 1.2;">Você também foge das fotos? <em>Ou, Pior: se olha no espelho e sente que não é mais você?</em></h1>
-
-                
-
-                <p class="subheadline reveal-on-scroll" style="--delay: 100ms; text-align: left; max-width: 500px; margin-left: 0;">A imagem que o espelho reflete (rosto ou corpo) não é mais a mulher que você é... Recupere o controle! A Estética de Alta Performance é a sua resposta científica para restaurar a sua melhor versão, da cabeça aos pés — sem cirurgia...</p>
-
+            <p class="subheadline reveal-on-scroll" style="--delay: 100ms; text-align: left; max-width: 500px; margin-left: 0;">A imagem que o espelho reflete (rosto ou corpo) não é mais a mulher que você é... Recupere o controle! A Estética de Alta Performance é a sua resposta científica para restaurar a sua melhor versão, da cabeça aos pés — sem cirurgia...</p>
                                 
+            <ul class="hero-checklist reveal-on-scroll" style="--delay: 300ms;">
+               <li>Restauração 360° (Facial & Corporal): A tecnologia que reconstrói ativamente seu colágeno.</li>
+                <li>Sem Medo de "Parecer Artificial": Nossa filosofia é "Restaurar" sua melhor versão, não mudá-la.</li>
+                <li>A Prova Imediata: Resultados de "Alta Performance" visíveis na primeira sessão.</li>
+            </ul>
+            
+            <a href="https://wa.me/5516993255934?text=Ol%C3%A1!%20Eu%20vim%20pelo%20site%20da%20Dra.%20Cristiane%20e%20quero%20mais%20detalhes%20sobre%20os%20procedimentos%20por%20gentileza..." 
+               class="cta cta-hero wa-trigger reveal-on-scroll" 
+               style="--delay: 400ms;" 
+               target="_blank" 
+               rel="noopener">
+                INICIAR MEU DIAGNÓSTICO PERSONALIZADO
+            </a>
+        </div>
 
-                <ul class="hero-checklist reveal-on-scroll" style="--delay: 300ms;">
+        <div class="hero-image-wrapper mobile-only-image reveal-on-scroll" style="--delay: 200ms;">
+            <img src="https://i.ibb.co/vvfhD3F2/DRA.webp" alt="Dra. Cristiane Caldeira">
+        </div>
 
-                   <li>Restauração 360° (Facial & Corporal): A tecnologia que reconstrói ativamente seu colágeno.</li>
-
-                    <li>Sem Medo de "Parecer Artificial": Nossa filosofia é "Restaurar" sua melhor versão, não mudá-la.</li>
-
-                    <li>A Prova Imediata: Resultados de "Alta Performance" visíveis na primeira sessão.</li>
-
-                </ul>
-
-                
-
-                <a href="https://wa.me/5516993255934?text=Ol%C3%A1!%20Eu%20vim%20pelo%20site%20da%20Dra.%20Cristiane%20e%20quero%20mais%20detalhes%20sobre%20os%20procedimentos%20por%20gentileza..." 
-
-                   class="cta cta-hero wa-trigger reveal-on-scroll" 
-
-                   style="--delay: 400ms;" 
-
-                   target="_blank" 
-
-                   rel="noopener">
-
-                    INICIAR MEU DIAGNÓSTICO PERSONALIZADO
-
-                </a>
-
-                <small class="reveal-on-scroll" style="--delay: 450ms; display: block; text-align: left; max-width: 450px; margin-left: 0;">Agende seu atendimento para sua Transformação!</small>
-
-                
-
-            </div>
-
-        </section>
+    </div>
+</section>
 
 
 
@@ -4619,17 +4547,6 @@
           
 
           stickyBar.style.display = 'block';
-
-
-
-// === MUDANÇA: Alinhamento StickyBar > Header (110% CORRIGIDO) ===
-        // Garante que a StickyBar está no topo
-        stickyBar.style.top = '0px'; 
-        
-        // Mede a altura da StickyBar e empurra o Header para baixo
-        const stickyBarHeight = stickyBar.offsetHeight;
-        mainHeader.style.top = `${stickyBarHeight}px`; 
-        // === FIM MUDANÇA ===
           
 
 // Esta lógica de scroll é SÓ para a cor de fundo do header
