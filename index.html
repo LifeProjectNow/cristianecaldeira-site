@@ -3558,14 +3558,6 @@
 
                 <p class="reveal-on-scroll" style="--delay: 200ms; font-style: italic; color: var(--c-text); font-weight: 500;">"Prazer! Sou a Dra. Cristiane Caldeira, Especialista em Estética de Alta Performance, e minha missão não é mudar você; é usar a ciência (amparada pela Lei 13.643/18) para devolver sua pele ao auge da performance dela. Nós oferecemos Protocolos Únicos: a Associação Inteligente de Tecnologias de Ponta. Não é mágica, é Ciência Aplicada com Arte!"</p>
 
-                
-
-                <a href="#arsenal" class="cta cta-secondary reveal-on-scroll" style="--delay: 300ms;">
-
-                    CONHECER OS PROTOCOLOS
-
-                </a>
-
             </div>
 
         </section>
@@ -5209,7 +5201,7 @@
             
             // MUDANÇA: Ações agora têm singular e plural
             const actions = [
-                { singular: 'acabou de entrar em contato.', plural: 'acabaram de entrar em contato...' }, 
+                { singular: 'entrou em contato...', plural: 'entraram em contato...' }, 
                 { singular: 'agendou seu Diagnóstico.', plural: 'agendaram seu Diagnóstico.' }, 
                 { singular: 'marcou sua Consultoria Exclusiva.', plural: 'marcaram sua Consultoria Exclusiva.' }, 
             ];
@@ -5239,7 +5231,7 @@
                 
                 setTimeout(() => {
                     widget.classList.add('geo-hidden');
-                }, 5000); // Tempo que a mensagem fica na tela
+                }, 6000); // Tempo que a mensagem fica na tela
             };
 
             if (widget && triggerSection) {
@@ -5249,7 +5241,7 @@
                         
                         // Dispara o primeiro popup, e DEPOIS inicia o loop
                         showGeoWidget(); 
-                        setInterval(showGeoWidget, 12000); // Mostra uma nova a cada 12 segundos
+                        setInterval(showGeoWidget, 23000); // Mostra uma nova a cada 12 segundos
                         
                         geoObserver.disconnect(); // Para de observar
                     }
