@@ -3340,6 +3340,22 @@
       }
 
       /* === FIM - CSS do Rodapé e Modais Legais === */
+/* === CSS para o Crédito do Desenvolvedor (Corrigido) === */
+      p.developer-credit {
+          font-size: 0.75rem; /* 12px (mesmo tamanho do copyright) */
+          opacity: 0.7;
+          margin-top: var(--spacing-md);
+      }
+      p.developer-credit a {
+          color: var(--c-text-body); /* Cor do texto do footer */
+          text-decoration: none; /* MUDANÇA: Remove o sublinhado */
+          opacity: 1; /* Garante que não fique transparente */
+      }
+      p.developer-credit a:hover {
+          color: var(--c-primary); /* Cor de destaque no hover */
+          text-decoration: underline; /* Adiciona o sublinhado SÓ no hover */
+      }
+      /* === FIM - CSS Crédito === */
 
 /* === INÍCIO - GATILHOS DE PERSUASÃO (WIDGETS) === */
       #fomo-widget, #geo-widget {
@@ -3390,13 +3406,15 @@
           50% { transform: scale(1.1); opacity: 1; }
           100% { transform: scale(1); opacity: 0.7; }
       }
-      /* Ajuste para não colidir com o Wpp no Mobile */
+/* Ajuste para não colidir com o Wpp no Mobile */
       @media (max-width: 767px) {
           #fomo-widget {
-              bottom: 85px; /* Acima do Wpp flutuante */
+              /* MUDANÇA: Alinhado com o botão do WhatsApp */
+              bottom: var(--spacing-md); /* 16px */
           }
           #geo-widget {
-              bottom: 135px;
+              /* MUDANÇA: Posicionado acima do fomo-widget */
+              bottom: 65px; 
           }
       }
       /* === FIM - GATILHOS DE PERSUASÃO === */
@@ -4375,7 +4393,7 @@
 
             <p>
 
-                <strong>Dra. Cristiane Caldeira</strong> | CNPJ: 30.491.507/0001-56 | Endereço da Clínica: Rua Carlos Gomes, 1891, Centro - Sertãozinho SP.
+                <strong>Dra. Cristiane Caldeira</strong> | CNPJ: 30.491.507/0001-56 | Endereço da Clínica: <strong>Rua Carlos Gomes, 1891, Centro - Sertãozinho SP.</strong>
 
             </p>
 
@@ -4399,6 +4417,10 @@
 
             </p>
 
+            <p class="developer-credit">
+                <a href="https://wa.me/5516996423194?text=Ol%C3%A1%2C%20eu%20vim%20pelo%20site%20da%20Dra.%20Cristiane%20Caldeira%20e%20quero%20saber%20mais%20detalhes%20sobre%20seu%20trabalho%20por%20gentileza..." target="_blank" rel="noopener">
+                Desenvolvido por: LEVEL UP - ASSESSORIA COMPLETA EM MARKETING DIGITAL
+                </a>
         </div>
 
     </footer>
@@ -5190,7 +5212,6 @@
                 { singular: 'acabou de entrar em contato.', plural: 'acabaram de entrar em contato...' }, 
                 { singular: 'agendou seu Diagnóstico.', plural: 'agendaram seu Diagnóstico.' }, 
                 { singular: 'marcou sua Consultoria Exclusiva.', plural: 'marcaram sua Consultoria Exclusiva.' }, 
-                { singular: 'iniciou seu Protocolo.', plural: 'iniciaram seu Protocolo.' }
             ];
             
             const widget = document.getElementById('geo-widget');
